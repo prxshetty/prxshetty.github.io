@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e5e5e5;
+    margin: 0;
+    padding: 40px;
+    color: #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    font-size: 16px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #555;
+}
+
+.social-link i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    line-height: 1.1;
+}
+
+.author-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author-info {
+    flex: 1;
+    margin-right: 40px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.role {
+    margin-bottom: 20px;
+}
+
+.role p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.author-image img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes color-change {
+    0%, 100% { color: #000; }
+    50% { color: #555; }
+}
+
+#kinetic-quote .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#kinetic-quote .word.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: float 1.5s ease-in-out , color-change 1.5s ease-in-out ;
+}
+
+.large-quote {
+    font-size: 7.5em; 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+footer {
+    
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
