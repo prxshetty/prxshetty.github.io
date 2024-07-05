@@ -130,3 +130,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    document.querySelectorAll('.scroll-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const direction = btn.classList.contains('left') ? -1 : 1;
+          const container = btn.closest('.content-container').querySelector('.content-blocks');
+          container.scrollBy({ left: direction * 270, behavior: 'smooth' });
+        });
+      });
+      
+      document.querySelectorAll('.read-more-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const block = btn.closest('.block');
+          const title = block.querySelector('h3').textContent;
+          const description = block.querySelector('p').textContent;
+          
+          miniPageContent.innerHTML = `
+            <h2>${title}</h2>
+            <p>${description}</p>
+            <p>This is additional content for the ${title} mini-page. You can add more details, images, or any other relevant information here.</p>
+          `;
+          
+          miniPageOverlay.style.display = 'flex';
+        });
+      });
+
+      function redirectToLink(button) {
+        // Find the parent block element containing the data-link attribute
+        var block = button.closest('.block');
+        if (block) {
+            // Get the URL from the data-link attribute
+            var link = block.getAttribute('data-link');
+            if (link) {
+                // Redirect to the specified URL
+                window.open(link, '_blank'); // Opens link in a new tab
+                // window.location.href = link; // Alternatively, opens link in the same tab
+            }
+        }
+    }
+    

@@ -213,17 +213,6 @@ footer p {
     color: #000;
 }
 
-
-.content-blocks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
 .content-blocks.active {
     opacity: 1;
     transform: translateY(0);
@@ -232,27 +221,156 @@ footer p {
 .block {
     background-color: #d5d5d5;
     border-radius: 15px;
-    padding: 20px;
-    width: 300px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 250px;
+    height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
-    display: block;
-}
-
-.block:hover {
-    background-color: #bbb;
-    transform: scale(1.05);
-}
-
-.block h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.block p {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    justify-content: space-between;
+    padding-left: 10px;
+  }
+  
+  .block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .block-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin:0;
+    padding: 0;
+  }
+  
+  .block h3 {
+    font-size: 20px;
+    margin-bottom: 15px 0 5px;
+  }
+  
+  .block p {
     font-size: 14px;
     line-height: 1.6;
-    margin: 0;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .block-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    
+  }
+  .block-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
 }
+
+  .block-btn {
+    background-color: #444;
+    color: #fff;
+    
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    padding: 10px ;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease color 0.3s ease;;
+}
+  .block-btn:hover {
+    background-color: #555;
+    color: #fff;
+  }
+
+.website-btn {
+    display: inline-block;
+    background-color: #444; /* Slightly darker for distinction */
+}
+
+.website-btn:hover {
+    background-color: #666;
+}
+.read-more-btn {
+    background-color: #444;
+    display: inline-block;
+    flex-grow: 1;
+}
+.read-more-btn:hover {
+    background-color: #666; /* Same hover effect */
+}
+  .content-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px; /*space for srcolls*/
+  }
+  
+  .content-blocks {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 0;
+  }
+  
+  .content-blocks::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scroll-btn.left, .scroll-btn.right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0,0,0,0.5); 
+}
+  .status {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid black;
+    background-color: #e5e5e5; 
+    color: black;
+    display: block;
+    width: fit-content;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
