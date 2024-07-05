@@ -42,6 +42,7 @@ h1 {
     font-weight: bold;
     margin-bottom: 80px;
     line-height: 1.1;
+    text-align: left;
 }
 
 .author-section {
@@ -50,12 +51,14 @@ h1 {
 }
 
 .author-info {
+    padding-top: 100px;
     flex: 1;
     margin-right: 40px;
+    text-align: left;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 52px;
     margin-bottom: 20px;
 }
 
@@ -65,30 +68,22 @@ h2 {
 
 .role p {
     margin: 0;
-    font-size: 14px;
+    font-size: 34px;
     line-height: 1.4;
 }
 
 .description {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .author-image img {
-    width: 200px;
+    padding-top: 145px;
+    align-items: right;
+    width: 400px;
     height: auto;
     object-fit: cover;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes color-change {
-    0%, 100% { color: #000; }
-    50% { color: #555; }
 }
 
 #kinetic-quote .word {
@@ -101,18 +96,16 @@ h2 {
 #kinetic-quote .word.active {
     opacity: 1;
     transform: translateY(0);
-    animation: float 1.5s ease-in-out , color-change 1.5s ease-in-out ;
 }
 
 .large-quote {
-    font-size: 7.5em; 
-    text-align: center; 
+    font-size: 8.5em; 
+    text-align: left; 
     margin-top: 20px; 
     margin-bottom: 20px; 
 }
 
 footer {
-    
     color: #000;
     padding: 20px 0;
     text-align: center;
@@ -127,20 +120,12 @@ footer p {
 }
 
 .get-to-know h2 {
-    font-size: 36px;
+    font-size: 56px;
     text-align: center;
     margin-bottom: 40px;
 }
 
-.content-blocks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
 .get-to-know nav {
-    background-color: #f0f0f0;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 30px;
@@ -162,7 +147,7 @@ footer p {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 21px;
     padding: 8px 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -174,7 +159,6 @@ footer p {
     color: #000;
 }
 
-/*                              MINI PAGE FORMATTING HERE                                   */
 .mini-page-overlay {
     display: none;
     position: fixed;
@@ -198,9 +182,12 @@ footer p {
     overflow-y: auto;
     position: relative;
 }
+
 .intro {
-    padding-bottom: 250px;
+    text-align: left;
+    padding-bottom: 50px;
 }
+
 .close-button {
     position: absolute;
     top: 10px;
@@ -213,11 +200,6 @@ footer p {
 
 .close-button:hover {
     color: #000;
-}
-
-.content-blocks.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .block {
@@ -235,41 +217,99 @@ footer p {
     position: relative;
     justify-content: space-between;
     padding-left: 10px;
-  }
-  
-  .block:hover {
+    align-items: flex-start;
+}
+
+.block:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .block-image {
-    width: 100%;
+}
+
+.block-edu {
+    background-color: #d5d5d5;
+    border-radius: 15px;
+    width: 250px;
+    height: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: flex-start;
+}
+
+.block-edu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.block-edu h3 {
+    font-size: 22.5px;
+    padding: 0;
+}
+
+.clg-name {
+    font-size: 15px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #e5e5e5; 
+    color: black;
+    display: block;
+    width: auto;
+    margin-bottom: 130px;
+}
+.ready {
+    font-size: 15px;
+    padding: 2px 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #e5e5e5; 
+    color: black;
+    display: block;
+    align-items: left;
+    width: auto;
+    /* margin-top: 10px; */
+    margin-bottom: 200px;
+}
+
+.block-image {
+    width: 90%;
     height: 150px;
     object-fit: cover;
-    margin:0;
+    margin: 0;
     padding: 0;
-  }
-  
-  .block h3 {
-    font-size: 20px;
-    margin-bottom: 15px 0 5px;
-  }
-  
-  .block p {
-    font-size: 14px;
+}
+
+.block h3 {
+    font-size: 22.5px;
+    margin-bottom: 0px 0 5px;
+    padding: 0;
+}
+
+.block p {
+    font-size: 17px;
     line-height: 1.6;
     margin-bottom: 20px;
     flex-grow: 1;
-  }
-  .block-content {
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.block-content {
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    
-  }
-  .block-btn-container {
+}
+
+.block-btn-container {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -279,45 +319,51 @@ footer p {
     width: calc(100% - 40px);
 }
 
-  .block-btn {
+.block-btn {
     background-color: #444;
     color: #fff;
-    
     border-radius: 10px;
     font-family: 'Inter', sans-serif;
-    padding: 10px ;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease color 0.3s ease;;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-  .block-btn:hover {
+
+.block-btn:hover {
     background-color: #555;
     color: #fff;
-  }
+}
 
 .website-btn {
     display: inline-block;
-    background-color: #444; /* Slightly darker for distinction */
+    background-color: #444;
 }
 
 .website-btn:hover {
     background-color: #666;
 }
+
 .read-more-btn {
     background-color: #444;
     display: inline-block;
     flex-grow: 1;
 }
+
 .read-more-btn:hover {
-    background-color: #666; /* Same hover effect */
+    background-color: #666;
 }
-  .content-container {
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 0 40px; /*space for srcolls*/
-  }
-  
-  .content-blocks {
+    padding: 0 40px;
+}
+
+.content-blocks {
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
@@ -327,13 +373,23 @@ footer p {
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding: 20px 0;
-  }
-  
-  .content-blocks::-webkit-scrollbar {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.content-blocks.active {
+    opacity: 1;
+    display: flex;
+    transform: translateY(0);
+
+}
+
+.content-blocks::-webkit-scrollbar {
     display: none;
-  }
-  
-  .scroll-btn.left, .scroll-btn.right {
+}
+
+.scroll-btn.left, .scroll-btn.right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -344,8 +400,8 @@ footer p {
     cursor: pointer;
     z-index: 10;
     font-size: 18px;
-    border-radius: 50%; 
-    width: 40px; 
+    border-radius: 50%;
+    width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -362,17 +418,30 @@ footer p {
 }
 
 .scroll-btn:hover {
-    background-color: rgba(0,0,0,0.5); 
+    background-color: rgba(0,0,0,0.5);
 }
-  .status {
+
+.status {
     font-size: 10px;
     padding: 2px 8px;
     border-radius: 12px;
     border: 1px solid black;
-    background-color: #e5e5e5; 
+    background-color: #e5e5e5;
+    color: black;
+    display: block;
+    width: fit-content;
+    margin-top: 5px;
+}
+
+.duration {
+    font-size: 15px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid black;
+    background-color: #e5e5e5;
     color: black;
     display: block;
     width: fit-content;
     margin-top: 5px;
     margin-bottom: 10px;
-  }
+}

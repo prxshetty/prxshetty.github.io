@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //first categry init
-    showContent('skills');
+    showContent('exp');
 });
     const h1 = document.querySelector('h1');
     const authorImage = document.querySelector('.author-image img');
