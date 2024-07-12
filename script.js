@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const authorSection = document.getElementById('author-section');
     const navLinks = document.querySelectorAll('.nav-link');
     const contentBlocks = document.querySelectorAll('.content-blocks');
-    const scrollBtns = document.querySelectorAll('.scroll-btn');
+    const miniPageOverlay = document.querySelector('.mini-page-overlay');
+    const miniPageContent = document.querySelector('.mini-page-content');
+    const closeButton = document.querySelector('.close-button');
 
     function animateWords() {
         words.forEach((word, index) => {
@@ -32,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 block.style.display = 'none';
             }
         });
-        updateScrollButtonsVisibility();
     }
 
     navLinks.forEach(link => {
@@ -49,108 +50,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showContent('exp');
 
-    function updateScrollButtonsVisibility() {
-        const activeContainer = document.querySelector('.content-blocks.active');
-        if (activeContainer) {
-            const leftBtn = activeContainer.parentElement.querySelector('.scroll-btn.left');
-            const rightBtn = activeContainer.parentElement.querySelector('.scroll-btn.right');
-
-            leftBtn.style.display = 'flex';
-            rightBtn.style.display = 'flex';
-
-            leftBtn.disabled = activeContainer.scrollLeft <= 0;
-            rightBtn.disabled = activeContainer.scrollLeft >= activeContainer.scrollWidth - activeContainer.clientWidth;
-
-            leftBtn.style.opacity = leftBtn.disabled ? '0.5' : '1';
-            rightBtn.style.opacity = rightBtn.disabled ? '0.5' : '1';
-        }
-    }
-
-    scrollBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (!btn.disabled) {
-                const direction = btn.classList.contains('left') ? -1 : 1;
-                const container = btn.closest('.content-container').querySelector('.content-blocks.active');
-                container.scrollBy({ left: direction * 300, behavior: 'smooth' });
+    contentBlocks.forEach(block => {
+        block.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                block.scrollBy({
+                    left: e.deltaY < 0 ? -350 : 350,
+                    behavior: 'smooth'
+                });
+                e.preventDefault();
             }
         });
     });
 
-    contentBlocks.forEach(block => {
-        block.addEventListener('scroll', updateScrollButtonsVisibility);
-    });
-
-    window.addEventListener('resize', updateScrollButtonsVisibility);
-
     const blocks = document.querySelectorAll('.block, .block-edu');
-    blocks.forEach(block => {
-        block.addEventListener('click', () => {
-            blocks.forEach(b => b.classList.remove('active'));
-            block.classList.add('active');
-            document.querySelectorAll('.block p, .block-edu p').forEach(p => p.style.display = 'none');
-            block.querySelector('p').style.display = 'block';
-        });
-    });
 
-    const miniPageOverlay = document.querySelector('.mini-page-overlay');
-    const miniPageContent = document.querySelector('.mini-page-content');
-    const closeButton = document.querySelector('.close-button');
-
-    blocks.forEach(block => {
-        block.addEventListener('click', (e) => {
-            e.preventDefault();
-            const title = block.querySelector('h3').textContent;
-            const description = block.querySelector('p').textContent;
-            const additionalContent = block.querySelector('.read-more-content').innerHTML;
-            
-            miniPageContent.innerHTML = `
-                <h2>${title}</h2>
-                <p>${description}</p>
-                <div>${additionalContent}</div>
-            `;
-            
-            miniPageOverlay.style.display = 'flex';
-        });
-    });
-
-    closeButton.addEventListener('click', () => {
-        miniPageOverlay.style.display = 'none';
-    });
-
-    miniPageOverlay.addEventListener('click', (e) => {
-        if (e.target === miniPageOverlay) {
-            miniPageOverlay.style.display = 'none';
-        }
-    });
-
-    document.querySelectorAll('.read-more-btn').forEach(btn => {
+    document.querySelectorAll('.read-more-btn, .gpa-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             const block = btn.closest('.block, .block-edu');
             const title = block.querySelector('h3').textContent;
             const description = block.querySelector('p').textContent;
-            const additionalContent = block.querySelector('.read-more-content').innerHTML;
-            
+            const additionalContent = block.querySelector('.read-more-content') ? block.querySelector('.read-more-content').innerHTML : '';
+
             miniPageContent.innerHTML = `
                 <h2>${title}</h2>
                 <p>${description}</p>
                 <div>${additionalContent}</div>
             `;
-            
+
             miniPageOverlay.style.display = 'flex';
         });
     });
 
-    updateScrollButtonsVisibility();
-});
+    blocks.forEach(block => {
+        block.addEventListener('click', () => {
+            blocks.forEach(b => b.classList.remove('active'));
+            block.classList.add('active');
+        });
+    });
 
-function redirectToLink(button) {
-    var block = button.closest('.block, .block-edu');
-    if (block) {
-        var link = block.getAttribute('data-link');
-        if (link) {
-            window.open(link, '_blank');
+    closeButton.addEventListener('click', () => {
+        miniPageOverlay.style.display = 'none';
+        resetContentBlocks();
+    });
+
+    miniPageOverlay.addEventListener('click', (e) => {
+        if (e.target === miniPageOverlay) {
+            miniPageOverlay.style.display = 'none';
+            resetContentBlocks();
         }
+    });
+
+    function resetContentBlocks() {
+        const activeCategory = document.querySelector('.nav-link.active').getAttribute('data-category');
+        showContent(activeCategory);
     }
-}
+});

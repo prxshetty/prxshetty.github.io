@@ -53,7 +53,7 @@ h1 {
 }
 
 .author-info {
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 h2 {
@@ -124,6 +124,10 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.get-to-know {
+    margin-top: 40px;
 }
 
 .get-to-know h2 {
@@ -267,6 +271,7 @@ footer a:hover {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    z-index: 10;
 }
 
 .block-btn, .website-btn, .read-more-btn {
@@ -330,53 +335,27 @@ footer a:hover {
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     padding: 20px 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .content-blocks::-webkit-scrollbar {
-    display: none;
+    height: 12px;
 }
-
-.content-blocks.active {
+.content-blocks::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+/* .content-blocks.active {
     opacity: 1;
     transform: translateY(0);
+} */
+.content-blocks::-webkit-scrollbar-track {
+    background: #333;
 }
-
 .scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
-    margin: 0 20px;
+    display: none;
 }
-
-.scroll-btn.left {
-    left: 0px;
-}
-
-.scroll-btn.right {
-    right: 0;
-}
-
-.scroll-btn:hover {
-    background-color: rgba(0,0,0,0.7);
-}
-
 .status {
     font-size: 12px;
     padding: 2px 8px;
