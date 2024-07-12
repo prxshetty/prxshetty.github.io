@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const quote = document.getElementById('kinetic-quote');
     const words = quote.querySelectorAll('.word');
+    const authorSection = document.getElementById('author-section');
     const navLinks = document.querySelectorAll('.nav-link');
     const contentBlocks = document.querySelectorAll('.content-blocks');
     const scrollBtns = document.querySelectorAll('.scroll-btn');
@@ -13,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     animateWords();
+
+    setTimeout(() => {
+        quote.style.display = 'none';
+        authorSection.style.display = 'flex';
+    }, 3000);
 
     function showContent(category) {
         contentBlocks.forEach(block => {
@@ -76,21 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateScrollButtonsVisibility);
 
-    const h1 = document.querySelector('h1');
-    const authorImage = document.querySelector('.author-image img');
-    
-    h1.addEventListener('mouseout', () => {
-        h1.style.color = '#000';
-    });
-
-    authorImage.addEventListener('mouseover', () => {
-        authorImage.style.transform = 'scale(1.1)';
-    });
-
-    authorImage.addEventListener('mouseout', () => {
-        authorImage.style.transform = 'scale(1)';
-    });
-
     const blocks = document.querySelectorAll('.block, .block-edu');
     blocks.forEach(block => {
         block.addEventListener('click', () => {
@@ -110,11 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const title = block.querySelector('h3').textContent;
             const description = block.querySelector('p').textContent;
+            const additionalContent = block.querySelector('.read-more-content').innerHTML;
             
             miniPageContent.innerHTML = `
                 <h2>${title}</h2>
                 <p>${description}</p>
-                <p>This is additional content for the ${title} mini-page. You can add more details, images, or any other relevant information here.</p>
+                <div>${additionalContent}</div>
             `;
             
             miniPageOverlay.style.display = 'flex';
@@ -138,11 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const block = btn.closest('.block, .block-edu');
             const title = block.querySelector('h3').textContent;
             const description = block.querySelector('p').textContent;
+            const additionalContent = block.querySelector('.read-more-content').innerHTML;
             
             miniPageContent.innerHTML = `
                 <h2>${title}</h2>
                 <p>${description}</p>
-                <p>This is additional content for the ${title} mini-page. You can add more details, images, or any other relevant information here.</p>
+                <div>${additionalContent}</div>
             `;
             
             miniPageOverlay.style.display = 'flex';
