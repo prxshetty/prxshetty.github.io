@@ -60,11 +60,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
             }
         });
+
+        
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        block.addEventListener('mousedown', (e) => {
+            isDown = true;
+            block.classList.add('active');
+            startX = e.pageX - block.offsetLeft;
+            scrollLeft = block.scrollLeft;
+        });
+
+        block.addEventListener('mouseleave', () => {
+            isDown = false;
+            block.classList.remove('active');
+        });
+
+        block.addEventListener('mouseup', () => {
+            isDown = false;
+            block.classList.remove('active');
+        });
+
+        block.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - block.offsetLeft;
+            const walk = (x - startX) * 3; // Adjust scroll speed
+            block.scrollLeft = scrollLeft - walk;
+        });
     });
 
     const blocks = document.querySelectorAll('.block, .block-edu');
 
-    document.querySelectorAll('.read-more-btn, .gpa-btn').forEach(btn => {
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -80,6 +110,34 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             miniPageOverlay.style.display = 'flex';
+        });
+    });
+
+    document.querySelectorAll('.gpa-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const block = btn.closest('.block-edu');
+            const title = block.querySelector('h3').textContent;
+            const description = block.querySelector('.clg-name').textContent;
+            const additionalContent = block.querySelector('.read-more-content') ? block.querySelector('.read-more-content').innerHTML : '';
+
+            miniPageContent.innerHTML = `
+                <h2>${title}</h2>
+                <p>${description}</p>
+                <div>${additionalContent}</div>
+            `;
+
+            miniPageOverlay.style.display = 'flex';
+        });
+    });
+
+    document.querySelectorAll('.link-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const link = btn.closest('.block, .block-edu').getAttribute('data-link');
+            window.open(link, '_blank');
         });
     });
 
