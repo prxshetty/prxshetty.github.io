@@ -1,13 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
     const quote = document.getElementById('kinetic-quote');
     const words = quote.querySelectorAll('.word');
-    const authorSection = document.getElementById('author-section');
+    const authorSection = document.querySelector('.author-section');
     const navLinks = document.querySelectorAll('.nav-link');
     const contentBlocks = document.querySelectorAll('.content-blocks');
     const miniPageOverlay = document.querySelector('.mini-page-overlay');
     const miniPageContent = document.querySelector('.mini-page-content');
     const closeButton = document.querySelector('.close-button');
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotContainer = document.querySelector('.chatbot-container');
+    const chatbotForm = document.getElementById('form');
+    const userInput = document.getElementById('user-input');
+    const conversationContainer = document.getElementById('chatbot-conversation-container');
+    chatbotContainer.classList.add('hidden');
+    chatbotToggle.addEventListener('click', () => {
+        chatbotContainer.classList.toggle('hidden');
+    });
+    chatbotForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const userMessage = userInput.value.trim();
+        if (userMessage) {
+            appendMessage(userMessage, 'human');
+            userInput.value = '';
+            //similutes a bot response after a delay
+            setTimeout(() => {
+                const botMessage = getBotResponse(userMessage);
+                appendMessage(botMessage, 'ai');
+            }, 1000);
+        }
+    });
+// SERVER CONTENT HERE****************************************
+    function appendMessage(message, sender) {
+        const messageBubble = document.createElement('div');
+        messageBubble.classList.add('speech', `speech-${sender}`);
+        messageBubble.textContent = message;
+        conversationContainer.appendChild(messageBubble);
+        conversationContainer.scrollTop = conversationContainer.scrollHeight;
+    }
 
+    function getBotResponse(userMessage) {
+        const responses = {
+            'hello': 'Hi there! How can I assist you today?',
+            'resume': 'You can view Pranam\'s resume <a href="assets/PranamShettyC_Resume.pdf" target="_blank">here</a>.',
+            'projects': 'Pranam has worked on several projects, including AI/ML projects. Check out the Projects section for more details.',
+            'experience': 'Pranam has experience as a Data Scientist and AI/ML Engineer. More details are available in the Experience section.',
+            'default': 'I am here to help you with information about Pranam. You can ask me about his resume, projects, experience, and more.'
+        };
+        return responses[userMessage.toLowerCase()] || responses['default'];
+    }
+//SERVER CONTENT ENDS HERE************************
     function animateWords() {
         words.forEach((word, index) => {
             setTimeout(() => {
@@ -87,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - block.offsetLeft;
-            const walk = (x - startX) * 3; // Adjust scroll speed
+            const walk = (x - startX) * 3; 
             block.scrollLeft = scrollLeft - walk;
         });
     });

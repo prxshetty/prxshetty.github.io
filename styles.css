@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
+:root { 
+    --border-rad-lg: 15px;
+    --light-text: #ffffff;
+    --outline-color: #ffffff;
+    --border-rad-round: 50%;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -36,13 +45,12 @@ header {
     font-size: 24px;
     margin-right: 10px;
 }
-
-h1 {
-    font-size: 72px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    line-height: 1.1;
-    text-align: center;
+.h1 {
+    font-family: 'Anuphan', sans-serif; 
+    color: var(--light-text);
+    font-size: 1.6em;
+    margin: 0;
+    font-weight: 700;
 }
 
 .author-section {
@@ -417,4 +425,153 @@ footer a:hover {
 
 .portfolio-note p {
     margin: 0;
+}
+.chatbot-container {
+    background-color: #000000;
+    width: 360px;
+    max-width: 100%; 
+    height: 500px;  
+    border-radius: var(--border-rad-lg);
+    padding: 1em;  
+    border: 1px solid #ffffff;
+    position: fixed;
+    bottom: 80px;  
+    right: 20px;  
+    z-index: 1000;
+    display: none; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chatbot-toggle img {
+    width: 60px;
+    height: 60px;
+    filter: grayscale(100%) brightness(200%)
+}
+
+.hidden {
+    display: none;
+}
+
+.chatbot-header {
+    flex-shrink: 0;
+}
+
+.chatbot-header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 1em;
+}
+
+.chatbot-header .header-text {
+    /* font-size: 1em; */
+    margin: 0;
+    font-weight: 700;
+}
+
+.chatbot-header .sub-heading {
+    color: #cccccc;
+    /* font-size: 0.7em;  */
+    margin: 0.5em 0 0 0;
+    font-weight: 300;
+    text-align: center; 
+}
+
+.chatbot-conversation-container {
+    height: 100%; 
+    overflow-y: auto;
+    flex-grow: 1;
+    margin: 1em 0;
+}
+
+.chatbot-conversation-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chatbot-conversation-container::-moz-scrollbar {
+    display: none;
+}
+
+.chatbot-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--outline-color);
+    border-radius: var(--border-rad-lg);
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 100%; 
+}
+
+.chatbot-input-container form {
+    display: flex;
+    width: 100%;
+}
+
+.chatbot-input-container input[type="text"] {
+    color: var(--light-text);
+    flex: 1;
+    padding: 0.5em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-right: 1px solid var(--outline-color);
+}
+
+.chatbot-input-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-rad-round);
+    width: 30px;
+    height: 30px;
+    /* margin-left: 0.5em; */
+}
+
+.chatbot-input-container button img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+}
+
+.chatbot-conversation-container .speech {
+    padding: 0.5em;
+    max-width: 240px; 
+    color: var(--light-text);
+    min-width: 90%;
+    border-radius: var(--border-rad-lg); 
+    font-size: 0.9em;
+}
+
+.chatbot-conversation-container .speech:first-child {
+    margin-top: 0;
+}
+
+.chatbot-conversation-container .speech-ai {
+    background: #334959;
+    border-top-left-radius: 0;
+    margin: 1.2em 1em 0 0; 
+}
+
+.chatbot-conversation-container .speech-human {
+    margin: 1.2em 0 0 1em; 
+    background: #2f4f4f;
+    border-top-right-radius: 0; 
 }
