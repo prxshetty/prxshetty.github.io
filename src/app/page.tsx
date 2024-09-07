@@ -46,7 +46,7 @@ const projects = [
     title: "NBA Influence Predictor",
     subtitle: "Data Analysis",
     description: "Python & R project predicting NBA player & team valuations based on various factors.",
-    image: "/images/projects/nba-predictor.jpg",
+    image: "/images/projects/nba_predictor.png",
     link: "https://github.com/prxshetty/NBAInfluencePredictor",
     technologies: ["Python", "R", "pandas", "statsmodels", "matplotlib"]
   },
@@ -54,7 +54,7 @@ const projects = [
     title: "NYC Parks Eventful Mongoers",
     subtitle: "Web Development",
     description: "Web app that discovers NYC Parks events via text & map search using Python, Flask, Node.js, and MongoDB.",
-    image: "/images/projects/nyc-parks.jpg",
+    image: "/images/projects/nyc_parks.jpg",
     link: "https://github.com/prxshetty/mongo-project-eventfulmongoers",
     technologies: ["Python", "Flask", "Node.js", "MongoDB", "Mapbox"]
   }
@@ -119,25 +119,25 @@ const academics = [
 
 const experiences = [
   {
-    title: "Data Science Intern",
-    company: "Tata Consultancy Services",
-    duration: "May 2023 - Aug 2023",
-    description: "Developed ML models for predictive maintenance in manufacturing. Implemented data pipelines and visualization dashboards.",
-    skills: ["Python", "TensorFlow", "Spark", "Tableau"]
+    title: "ML Engineer Intern",
+    company: "Marva.ai",
+    duration: "June 2023 - Aug 2023",
+    description: "Improved stock prediction and buy/sell signal reliability using AI/ML models, Ichimoku Cloud strategies, and NLP sentiment analysis.",
+    skills: ["LSTM", "FinBERT", "TensorFlow", "AWS Sagemaker", "Docker", "Jenkins", "JIRA"]
   },
   {
-    title: "Machine Learning Intern",
-    company: "Persistent Systems",
-    duration: "Jan 2023 - Apr 2023",
-    description: "Worked on NLP projects, including sentiment analysis and text classification. Improved model accuracy by 15%.",
-    skills: ["Python", "NLTK", "Scikit-learn", "Keras"]
+    title: "ML Research Intern",
+    company: "Knowledge Solutions India",
+    duration: "Sept 2021 - Nov 2021",
+    description: "Developed and optimized ML pipelines for insurance claims prediction, improving data quality, reducing errors, and enhancing processing speed.",
+    skills: ["PySpark", "PowerBI", "XGBoost", "Random Forest", "SQL"]
   },
   {
-    title: "Data Analyst Intern",
-    company: "Infosys",
-    duration: "Jun 2022 - Aug 2022",
-    description: "Analyzed large datasets to identify trends and patterns. Created reports and visualizations for stakeholders.",
-    skills: ["SQL", "Excel", "Power BI", "R"]
+    title: "Sales Intern",
+    company: "Laugh Out Loud Ventures Pvt Ltd",
+    duration: "Feb 2021 - March 2021",
+    description: "Led sales strategies and digital marketing campaigns during the pandemic, increasing education course sales.",
+    skills: ["Google Analytics", "CRM software", "Google Ads", "Facebook Ads", "SEO tools", "Email software"]
   }
 ];
 
@@ -183,7 +183,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {["Python", "SQL", "JavaScript", "Node.js", "Docker"].map((skill) => (
-              <span key={skill} className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">
+              <span key={skill} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
                 {skill}
               </span>
             ))}
