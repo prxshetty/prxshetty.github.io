@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const projects = [
   {
@@ -142,164 +144,223 @@ const experiences = [
 ];
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
-      <div className="container mx-auto px-4 py-8">
-        <header className="text-center mb-8">
-          <div className="w-32 h-32 mx-auto mb-3 overflow-hidden rounded-full">
-            <Image
-              src="/images/profile.jpg"
-              alt="Pranam Prakash Shetty"
-              width={128}
-              height={128}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <h1 className="text-2xl font-bold mb-1">Pranam Prakash Shetty</h1>
-          <p className="text-lg font-semibold text-gray-700 mb-1">Student at RIT</p>
-          <p className="text-gray-600 mb-2 text-sm">
-            <i className="fas fa-map-marker-alt mr-2"></i>Rochester, NY
-          </p>
-          <div className="flex justify-center space-x-3 mb-3">
-            <a href="https://twitter.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-400">
-              <i className="fab fa-twitter text-xl"></i>
-            </a>
-            <a href="https://www.kaggle.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-500">
-              <i className="fab fa-kaggle text-xl"></i>
-            </a>
-            <a href="mailto:prxshetty@gmail.com" className="text-gray-700 hover:text-red-500">
-              <i className="fas fa-envelope text-xl"></i>
-            </a>
-            <a href="https://linkedin.com/in/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700">
-              <i className="fab fa-linkedin text-xl"></i>
-            </a>
-            <a href="https://github.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
-              <i className="fab fa-github text-xl"></i>
-            </a>
-          </div>
-          <p className="text-sm text-gray-600 max-w-2xl mx-auto mb-3">
-            Hi!👋🏽 I&apos;m a Data science graduate at RIT. ❤️ neural architectures. 
-            When I&apos;m not coding, you&apos;ll find me enjoying coffee ☕️ and chess ♟️.
-            Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
-            just want to chat about the latest in tech, feel free to reach out.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {["Python", "SQL", "JavaScript", "Node.js", "Docker"].map((skill) => (
-              <span key={skill} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </header>
+  const [projectIndex, setProjectIndex] = useState(0);
+  const [blogIndex, setBlogIndex] = useState(0);
 
-        <div className="bg-gradient-to-b from-gray-100 to-white rounded-lg shadow-md p-6">
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-4 text-left">Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.map((project, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={200}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <p className="text-blue-800 text-sm font-semibold mb-1">{project.subtitle}</p>
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-bold text-lg">{project.title}</h3>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-500">
-                        <i className="fab fa-github text-xl"></i>
-                      </a>
+  const nextProjects = () => {
+    setProjectIndex((prevIndex) => (prevIndex + 1) % (projects.length - 2));
+  };
+
+  const prevProjects = () => {
+    setProjectIndex((prevIndex) => (prevIndex - 1 + projects.length - 2) % (projects.length - 2));
+  };
+
+  const nextBlogs = () => {
+    setBlogIndex((prevIndex) => (prevIndex + 1) % (blogs.length - 2));
+  };
+
+  const prevBlogs = () => {
+    setBlogIndex((prevIndex) => (prevIndex - 1 + blogs.length - 2) % (blogs.length - 2));
+  };
+
+  useEffect(() => {
+    const projectsContainer = document.getElementById('projects-container');
+    if (projectsContainer) {
+      projectsContainer.style.transition = 'transform 0.5s ease-in-out';
+      projectsContainer.style.transform = `translateX(-${projectIndex * 33.33}%)`;
+    }
+  }, [projectIndex]);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Thin strip at the top */}
+      <div className="h-1 bg-[#592be2] w-full"></div>
+      
+      <div className="flex">
+        {/* Sidebar */}
+        <aside className="w-1/4 bg-gray-100 pl-8">
+          <div className="sticky top-8">
+            <div className="w-32 h-32 mx-auto mb-3 overflow-hidden rounded-full">
+              <Image
+                src="/images/profile.jpg"
+                alt="Pranam Prakash Shetty"
+                width={128}
+                height={128}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <h1 className="text-2xl font-bold mb-1 text-center">Pranam Prakash Shetty</h1>
+            <p className="text-lg font-semibold text-gray-700 mb-1 text-center">Student at RIT</p>
+            <p className="text-gray-600 mb-2 text-sm text-center">
+              <i className="fas fa-map-marker-alt mr-2"></i>Rochester, NY
+            </p>
+            <div className="flex justify-center space-x-3 mb-3">
+              <a href="https://twitter.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+                <i className="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="https://www.kaggle.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+                <i className="fab fa-kaggle text-xl"></i>
+              </a>
+              <a href="mailto:prxshetty@gmail.com" className="text-gray-700 hover:text-[#592be2]">
+                <i className="fas fa-envelope text-xl"></i>
+              </a>
+              <a href="https://linkedin.com/in/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+                <i className="fab fa-linkedin text-xl"></i>
+              </a>
+              <a href="https://github.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+                <i className="fab fa-github text-xl"></i>
+              </a>
+            </div>
+            <div className="text-center mb-6">
+              <a 
+                href="/docs/PranamShettyF_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-[#592be2] hover:text-[#4a24b8] font-semibold text-sm inline-flex items-center"
+              >
+                <i className="far fa-file-alt mr-2"></i> Resume
+              </a>
+            </div>
+            <h3 className="font-semibold mb-2 text-center">About</h3>
+            <p className="text-sm text-gray-600 mb-6 px-4">
+              I'm a Data science graduate at RIT. I love neural architectures. 
+              When I'm not coding, you'll find me enjoying coffee and chess.
+              Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
+            </p>
+            <h3 className="font-semibold mb-2 text-center">Skills</h3>
+            <div className="flex flex-wrap gap-2 justify-center px-4">
+              {["Python", "SQL", "JavaScript", "Node.js", "Docker"].map((skill) => (
+                <span key={skill} className="bg-[#592be2]/10 text-[#592be2] px-3 py-1 rounded-full text-xs font-normal">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </aside>
+
+        {/* Main content */}
+        <main className="w-3/4 pl-8 pr-8 bg-white">
+          <div className="rounded-lg p-6">
+            <section className="mb-10">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-left">Projects</h2>
+                {projects.length > 3 && (
+                  <div className="flex space-x-2">
+                    <button onClick={prevProjects} className="text-[#592be2] hover:text-[#4a24b8]">
+                      <i className="fas fa-chevron-left"></i>
+                    </button>
+                    <button onClick={nextProjects} className="text-[#592be2] hover:text-[#4a24b8]">
+                      <i className="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                )}
+              </div>
+              <div className="overflow-hidden">
+                <div id="projects-container" className="flex transition-transform duration-500 ease-in-out" style={{width: `${projects.length * 33.33}%`}}>
+                  {projects.map((project, index) => (
+                    <div key={index} className="w-1/3 px-3">
+                      <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={400}
+                          height={200}
+                          className="w-full h-48 object-cover rounded-lg"
+                        />
+                        <div className="p-4 flex-grow flex flex-col">
+                          <p className="text-[#592be2] text-sm font-semibold mb-1">{project.subtitle}</p>
+                          <h3 className="font-bold text-lg mb-2">{project.title}</h3>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span key={techIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <p className="text-gray-600 text-sm mb-3 flex-grow">{project.description}</p>
+                          <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[#592be2] hover:text-[#4a24b8] mt-auto inline-flex items-center">
+                            Read more <span className="ml-1">&#8594;</span>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-gray-600 text-sm mb-3">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs font-semibold">
-                          {tech}
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-left">Blog Posts</h2>
+                {blogs.length > 3 && (
+                  <div className="flex space-x-2">
+                    <button onClick={prevBlogs} className="text-[#592be2] hover:text-[#4a24b8]">
+                      <i className="fas fa-chevron-left"></i>
+                    </button>
+                    <button onClick={nextBlogs} className="text-[#592be2] hover:text-[#4a24b8]">
+                      <i className="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                )}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {blogs.slice(blogIndex, blogIndex + 3).map((blog, index) => (
+                  <a href={blog.link} key={index} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                      <div className="p-4 flex-grow flex flex-col">
+                        <h3 className="font-bold text-lg mb-2">{blog.title}</h3>
+                        <p className="text-gray-600 text-sm flex-grow">{blog.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4 text-left">Academic Journey</h2>
+              <div className="space-y-4">
+                {academics.map((item, index) => (
+                  <div key={index} className="mb-4">
+                    <h3 className="font-bold text-lg text-[#592be2]">{item.degree}</h3>
+                    <p className="text-gray-700">{item.institution}</p>
+                    <p className="text-gray-600 text-sm">{item.year}</p>
+                    {item.gpa && <p className="text-gray-600 text-sm">GPA: {item.gpa}</p>}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4 text-left">Experience</h2>
+              <div className="space-y-4">
+                {experiences.map((item, index) => (
+                  <div key={index} className="mb-4">
+                    <h3 className="font-bold text-lg text-[#592be2]">{item.title}</h3>
+                    <p className="text-gray-700">{item.company}</p>
+                    <p className="text-gray-600 text-sm">{item.duration}</p>
+                    <p className="text-gray-600 mt-2">{item.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {item.skills.map((skill, skillIndex) => (
+                        <span key={skillIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
+                          {skill}
                         </span>
                       ))}
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-4 text-left">Blog Posts</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {blogs.map((blog, index) => (
-                <a href={blog.link} key={index} target="_blank" rel="noopener noreferrer" className="block">
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      width={400}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                      <h3 className="font-bold text-lg mb-2">{blog.title}</h3>
-                      <p className="text-gray-600 text-sm">{blog.description}</p>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-4 text-left">Academic Journey & Experience</h2>
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-200"></div>
-              {[...academics, ...experiences].sort((a, b) => {
-                const getDate = (item: any) => new Date(item.year?.split(' - ')[1] || item.duration?.split(' - ')[1] || '');
-                return getDate(b).getTime() - getDate(a).getTime();
-              }).map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-                >
-                  <div className={`w-5 h-5 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg`}></div>
-                  <div
-                    className={`bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 w-5/12 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
-                  >
-                    {'degree' in item ? (
-                      <>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          <h3 className="font-bold text-xl mb-2 text-blue-600">{item.degree}</h3>
-                          <p className="text-gray-700 font-semibold">{item.institution}</p>
-                        </a>
-                        <p className="text-gray-500 mt-2">{item.year}</p>
-                        {item.gpa && <p className="text-gray-600 mt-1">GPA: {item.gpa}</p>}
-                      </>
-                    ) : (
-                      <>
-                        <h3 className="font-bold text-xl mb-2 text-blue-600">{item.title}</h3>
-                        <p className="text-gray-700 font-semibold">{item.company}</p>
-                        <p className="text-gray-500 mt-1">{item.duration}</p>
-                        <p className="text-gray-600 mt-3">{item.description}</p>
-                        <div className="flex flex-wrap gap-2 mt-3">
-                          {item.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </main>
       </div>
-      <footer className="text-center py-4 text-sm text-gray-500">
-        © 2024 Pranam Prakash Shetty. All rights reserved.
-      </footer>
     </div>
   );
 }
