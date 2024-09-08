@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Large Language Model",
     subtitle: "Deep Learning",
-    description: "A machine learning project to build a large language model from scratch, inspired by Karpathy's nn.",
+    description: "A machine learning project to build a large language model from scratch, inspired by Karpathy&apos;s nn.",
     image: "/images/projects/llm-scratch.jpg",
     link: "https://github.com/prxshetty/karpathy-nn",
     technologies: ["Python", "PyTorch", "Neural Networks"]
@@ -135,7 +135,7 @@ const experiences = [
   {
     title: "Sales Intern",
     company: "Laugh Out Loud Ventures Pvt Ltd",
-    duration: "Feb 2021 - March 2021",
+    duration: "Feb 2020 - March 2020",
     description: "Led sales strategies and digital marketing campaigns during the pandemic, increasing education course sales.",
     skills: ["Google Analytics", "CRM software", "Google Ads", "Facebook Ads", "SEO tools", "Email software"]
   }
@@ -178,8 +178,10 @@ export default function Home() {
             </a>
           </div>
           <p className="text-sm text-gray-600 max-w-2xl mx-auto mb-3">
-            Passionate data science student with experience in machine learning, deep learning, and data analysis. 
-            Currently pursuing a Master's degree in Data Science at RIT, focusing on cutting-edge AI technologies and their practical applications.
+            Hi!👋🏽 I&apos;m a Data science graduate at RIT. ❤️ neural architectures. 
+            When I&apos;m not coding, you&apos;ll find me enjoying coffee ☕️ and chess ♟️.
+            Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
+            just want to chat about the latest in tech, feel free to reach out.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {["Python", "SQL", "JavaScript", "Node.js", "Docker"].map((skill) => (
@@ -256,27 +258,32 @@ export default function Home() {
                 const getDate = (item: any) => new Date(item.year?.split(' - ')[1] || item.duration?.split(' - ')[1] || '');
                 return getDate(b).getTime() - getDate(a).getTime();
               }).map((item, index) => (
-                <div key={index} className={`flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5 h-5 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10`}></div>
-                  <div className={`bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-5/12 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}>
+                <div
+                  key={index}
+                  className={`flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                >
+                  <div className={`w-5 h-5 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg`}></div>
+                  <div
+                    className={`bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 w-5/12 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
+                  >
                     {'degree' in item ? (
                       <>
                         <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          <h3 className="font-bold text-lg">{item.degree}</h3>
-                          <p className="text-gray-600">{item.institution}</p>
+                          <h3 className="font-bold text-xl mb-2 text-blue-600">{item.degree}</h3>
+                          <p className="text-gray-700 font-semibold">{item.institution}</p>
                         </a>
-                        <p className="text-gray-500">{item.year}</p>
-                        {item.gpa && <p className="text-gray-500">GPA: {item.gpa}</p>}
+                        <p className="text-gray-500 mt-2">{item.year}</p>
+                        {item.gpa && <p className="text-gray-600 mt-1">GPA: {item.gpa}</p>}
                       </>
                     ) : (
                       <>
-                        <h3 className="font-bold text-lg">{item.title}</h3>
-                        <p className="text-gray-600">{item.company}</p>
-                        <p className="text-gray-500">{item.duration}</p>
-                        <p className="text-gray-600 mt-2">{item.description}</p>
-                        <div className="flex flex-wrap gap-2 mt-2">
+                        <h3 className="font-bold text-xl mb-2 text-blue-600">{item.title}</h3>
+                        <p className="text-gray-700 font-semibold">{item.company}</p>
+                        <p className="text-gray-500 mt-1">{item.duration}</p>
+                        <p className="text-gray-600 mt-3">{item.description}</p>
+                        <div className="flex flex-wrap gap-2 mt-3">
                           {item.skills.map((skill, skillIndex) => (
-                            <span key={skillIndex} className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">
+                            <span key={skillIndex} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
                               {skill}
                             </span>
                           ))}

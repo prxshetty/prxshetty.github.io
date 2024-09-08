@@ -9,6 +9,18 @@ module.exports = {
       colors: {
         'light-blue': '#E6F3FF',
         'dark-blue': '#0056b3',
+        blue: {
+          100: '#E6F0FD',
+          500: '#3B82F6',
+          600: '#2563EB',
+          800: '#1E40AF',
+        },
+        gray: {
+          100: '#F3F4F6',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
