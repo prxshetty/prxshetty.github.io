@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/prxshetty.github.io',
+  assetPrefix: '/prxshetty.github.io',
 }
 
 module.exports = nextConfig
