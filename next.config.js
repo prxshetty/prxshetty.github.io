@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Add this if you're using a custom domain, otherwise use your GitHub Pages URL
+  // Make sure this matches your repository name
   basePath: '/prxshetty.github.io',
 }
 
