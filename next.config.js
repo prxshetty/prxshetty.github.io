@@ -4,7 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Make sure this matches your repository name
   basePath: '/prxshetty.github.io',
 }
 
