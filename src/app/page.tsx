@@ -118,7 +118,7 @@ const academics = [
     year: "2023 - Present",
     gpa: "3.93 (SEM 2)",
     link: "https://www.rit.edu/",
-    comment: "Focusing on advanced machine learning techniques and big data analytics."
+    comment: "After completing my Masters, I would have developed a strong foundation in data science principles, software engineering, database design, and advanced analytics."
   },
   {
     degree: "Post Graduation Diploma, Data Science",
@@ -126,7 +126,7 @@ const academics = [
     year: "2022 - 2023",
     gpa: "3.828",
     link: "https://sspu.ac.in/",
-    comment: "Specialized in statistical modeling and predictive analytics."
+    comment: "This Diploma/Associate degree specialized in statistical modeling, vector mathematics, AI Ethics and predictive analytics."
   },
   {
     degree: "Bachelor of Science, Computer Science",
@@ -134,7 +134,7 @@ const academics = [
     year: "2019 - 2022",
     gpa: "3.736",
     link: "https://kkwagh.edu.in/",
-    comment: "Built a strong foundation in programming and algorithms."
+    comment: "Built a strong foundation in programming and algorithms with my very first programming course in C++. Taught DSA, Probability Statistics, Java, Web Development, DBMS, Operating Systems, Computer Networks, Software Engineering, etc."
   },
   {
     degree: "Higher Secondary, STEM",
@@ -157,21 +157,21 @@ const experiences = [
     title: "ML Engineer Intern",
     company: "Marva.ai",
     duration: "June 2023 - Aug 2023",
-    description: "Improved stock prediction and buy/sell signal reliability using AI/ML models, Ichimoku Cloud strategies, and NLP sentiment analysis.",
+    description: "Pranam worked on financial stock prediction models, improving the accuracy of buy/sell signals using Ichimoku Cloud strategies and LSTM models. He applied NLP techniques with FinBERT for sentiment analysis, achieving a 15% increase in stock prediction accuracy. He also created real-time data visualizations using Plotly and Dash.",
     skills: ["LSTM", "FinBERT", "TensorFlow", "AWS Sagemaker", "Docker", "Jenkins", "JIRA"]
   },
   {
     title: "ML Research Intern",
     company: "Knowledge Solutions India",
     duration: "Sept 2021 - Nov 2021",
-    description: "Developed and optimized ML pipelines for insurance claims prediction, improving data quality, reducing errors, and enhancing processing speed.",
+    description: "He developed an ML pipeline for insurance claim cost prediction, using regression models like XGBoost and Random Forest. Pranam optimized data processing with PySpark, reducing the processing time by 40%, and created dashboards in PowerBI for model visualization.",
     skills: ["PySpark", "PowerBI", "XGBoost", "Random Forest", "SQL"]
   },
   {
     title: "Sales Intern",
     company: "Laugh Out Loud Ventures Pvt Ltd",
     duration: "Feb 2020 - March 2020",
-    description: "Led sales strategies and digital marketing campaigns during the pandemic, increasing education course sales.",
+    description: "He led a sales team and shifted strategies to digital advertising during the pandemic, driving increased sales of educational courses through Google and Facebook Ads.",
     skills: ["Google Analytics", "CRM software", "Google Ads", "Facebook Ads", "SEO tools", "Email software"]
   }
 ];
@@ -320,7 +320,7 @@ export default function Home() {
         <main className="w-3/4 pl-8 pr-8 bg-white overflow-hidden">
           <div className="rounded-lg p-6">
             {/* Projects section */}
-            <section className="mb-10 relative">
+            <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Projects</h2>
                 <div className="flex space-x-2">
@@ -373,7 +373,7 @@ export default function Home() {
             </section>
 
             {/* Blog Posts section */}
-            <section className="mb-10 relative">
+            <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Blog Posts</h2>
                 <div className="flex space-x-2">
@@ -460,7 +460,7 @@ export default function Home() {
                   </button>
                   <button 
                     onClick={nextExperience} 
-                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${experienceIndex === experiences.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300${experienceIndex === experiences.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={experienceIndex === experiences.length - 1}
                   >
                     <i className="fas fa-chevron-right"></i>
@@ -471,7 +471,7 @@ export default function Home() {
                 <p className="text-gray-600 text-sm mb-2">{experiences[experienceIndex].duration}</p>
                 <h3 className="font-medium text-lg text-black">{experiences[experienceIndex].title}</h3>
                 <p className="text-gray-700">{experiences[experienceIndex].company}</p>
-                <p className="text-gray-600 mt-2">{experiences[experienceIndex].description}</p>
+                <p className="text-gray-600 mt-2 italic">{experiences[experienceIndex].description}</p>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {experiences[experienceIndex].skills.map((skill, skillIndex) => (
                     <span key={skillIndex} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-normal">
