@@ -16,7 +16,7 @@ const projects = [
     image: "/images/projects/depth-seg.png",
     link: "https://github.com/prxshetty/midas-depthseg",
     technologies: ["MiDaS", "PyTorch", "Scikit-image", "CUDA"]
-  },
+  }, 
   {
     title: "Resume Chatbot",
     subtitle: "Natural Language Processing",
