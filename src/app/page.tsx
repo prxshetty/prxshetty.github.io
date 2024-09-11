@@ -330,14 +330,18 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${projectIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={projectIndex === 0}
                   >
-                    <i className="fas fa-chevron-left"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
                   </button>
                   <button 
                     onClick={nextProjects} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${projectIndex === projects.length - 3 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={projectIndex === projects.length - 3}
                   >
-                    <i className="fas fa-chevron-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -383,14 +387,18 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${blogIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={blogIndex === 0}
                   >
-                    <i className="fas fa-chevron-left"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
                   </button>
                   <button 
                     onClick={nextBlogs} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${blogIndex === blogs.length - 3 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={blogIndex === blogs.length - 3}
                   >
-                    <i className="fas fa-chevron-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -427,14 +435,18 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${academicIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={academicIndex === 0}
                   >
-                    <i className="fas fa-chevron-left"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
                   </button>
                   <button 
                     onClick={nextAcademic} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${academicIndex === academics.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={academicIndex === academics.length - 1}
                   >
-                    <i className="fas fa-chevron-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -457,14 +469,18 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${experienceIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={experienceIndex === 0}
                   >
-                    <i className="fas fa-chevron-left"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
                   </button>
                   <button 
                     onClick={nextExperience} 
-                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300${experienceIndex === experiences.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${experienceIndex === experiences.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={experienceIndex === experiences.length - 1}
                   >
-                    <i className="fas fa-chevron-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </div>
               </div>
