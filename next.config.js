@@ -1,16 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   output: 'export',
   images: {
     unoptimized: true,
   },
-  // assetPrefix: '/prxshetty.github.io',
-  // basePath: '/prxshetty.github.io'
-}
-if (process.env.NODE_ENV === 'production') {
-  nextConfig.assetPrefix = '/prxshetty.github.io'
-  nextConfig.basePath = '/prxshetty.github.io'
-}
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    });
+    return config;
+  },
+};
 
-
-module.exports = nextConfig
+module.exports = nextConfig;
