@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add any global styles here */
+/* Include any styles from the previous src/app/globals.css file that you want to keep */

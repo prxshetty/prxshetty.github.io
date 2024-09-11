@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Tooltip } from 'react-tooltip';
 import { Roboto_Mono } from 'next/font/google';
 
-const robotoMono = Roboto_Mono({ weight: ['300'], subsets: ['latin'] });
+const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
 
 const projects = [
   {
