@@ -1,10 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Tooltip } from 'react-tooltip';
 import { Roboto_Mono } from 'next/font/google';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTwitter, faKaggle, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+// Add the icons to the library
+library.add(faTwitter, faKaggle, faLinkedin, faGithub, faFileAlt, faChevronLeft, faChevronRight);
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
 
@@ -272,16 +279,16 @@ export default function Home() {
             </p>
             <div className="flex space-x-3 mb-3 items-center">
               <a href="https://twitter.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
-                <i className="fab fa-twitter text-xl"></i>
+                <FontAwesomeIcon icon={['fab', 'twitter']} className="text-xl" />
               </a>
               <a href="https://www.kaggle.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
-                <i className="fab fa-kaggle text-xl"></i>
+                <FontAwesomeIcon icon={['fab', 'kaggle']} className="text-xl" />
               </a>
               <a href="https://linkedin.com/in/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
-                <i className="fab fa-linkedin text-xl"></i>
+                <FontAwesomeIcon icon={['fab', 'linkedin']} className="text-xl" />
               </a>
               <a href="https://github.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
-                <i className="fab fa-github text-xl"></i>
+                <FontAwesomeIcon icon={['fab', 'github']} className="text-xl" />
               </a>
               <a 
                 href="mailto:prxshetty@gmail.com" 
@@ -330,18 +337,14 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${projectIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={projectIndex === 0}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-left" className="h-6 w-6" />
                   </button>
                   <button 
                     onClick={nextProjects} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${projectIndex === projects.length - 3 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={projectIndex === projects.length - 3}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-right" className="h-6 w-6" />
                   </button>
                 </div>
               </div>
@@ -387,18 +390,14 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${blogIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={blogIndex === 0}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-left" className="h-6 w-6" />
                   </button>
                   <button 
                     onClick={nextBlogs} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${blogIndex === blogs.length - 3 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={blogIndex === blogs.length - 3}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-right" className="h-6 w-6" />
                   </button>
                 </div>
               </div>
@@ -426,7 +425,7 @@ export default function Home() {
             </section>
 
             {/* Academic Journey section */}
-            <section className="mb-10">
+            <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Academic Journey</h2>
                 <div className="flex space-x-2">
@@ -435,32 +434,34 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${academicIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={academicIndex === 0}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-left" className="h-6 w-6" />
                   </button>
                   <button 
                     onClick={nextAcademic} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${academicIndex === academics.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={academicIndex === academics.length - 1}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-right" className="h-6 w-6" />
                   </button>
                 </div>
               </div>
-              <div className="rounded-lg p-6">
-                <p className="text-gray-600 text-sm mb-2">{academics[academicIndex].year}</p>
-                <h3 className="font-medium text-lg text-black">{academics[academicIndex].degree}</h3>
-                <p className="text-gray-700">{academics[academicIndex].institution}</p>
-                {academics[academicIndex].gpa && <p className="text-gray-600 text-sm">GPA: {academics[academicIndex].gpa}</p>}
-                <p className="text-gray-600 text-sm mt-2 italic">{academics[academicIndex].comment}</p>
+              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${academicIndex * 100}%)` }}>
+                {academics.map((academic, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="rounded-lg p-6">
+                      <p className="text-gray-600 text-sm mb-2">{academic.year}</p>
+                      <h3 className="font-medium text-lg text-black">{academic.degree}</h3>
+                      <p className="text-gray-700">{academic.institution}</p>
+                      {academic.gpa && <p className="text-gray-600 text-sm">GPA: {academic.gpa}</p>}
+                      <p className="text-gray-600 text-sm mt-2 italic">{academic.comment}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
 
             {/* Experience section */}
-            <section className="mb-10">
+            <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Experience</h2>
                 <div className="flex space-x-2">
@@ -469,33 +470,35 @@ export default function Home() {
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${experienceIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={experienceIndex === 0}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-left" className="h-6 w-6" />
                   </button>
                   <button 
                     onClick={nextExperience} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${experienceIndex === experiences.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
                     disabled={experienceIndex === experiences.length - 1}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <FontAwesomeIcon icon="chevron-right" className="h-6 w-6" />
                   </button>
                 </div>
               </div>
-              <div className="rounded-lg p-6">
-                <p className="text-gray-600 text-sm mb-2">{experiences[experienceIndex].duration}</p>
-                <h3 className="font-medium text-lg text-black">{experiences[experienceIndex].title}</h3>
-                <p className="text-gray-700">{experiences[experienceIndex].company}</p>
-                <p className="text-gray-600 mt-2 italic">{experiences[experienceIndex].description}</p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {experiences[experienceIndex].skills.map((skill, skillIndex) => (
-                    <span key={skillIndex} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-normal">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${experienceIndex * 100}%)` }}>
+                {experiences.map((experience, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="rounded-lg p-6">
+                      <p className="text-gray-600 text-sm mb-2">{experience.duration}</p>
+                      <h3 className="font-medium text-lg text-black">{experience.title}</h3>
+                      <p className="text-gray-700">{experience.company}</p>
+                      <p className="text-gray-600 mt-2 italic">{experience.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {experience.skills.map((skill, skillIndex) => (
+                          <span key={skillIndex} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-normal">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
 
