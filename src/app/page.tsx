@@ -17,7 +17,7 @@ const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
 
 const projects = [
   {
-    title: "Dept Segmentation",
+    title: "Depth Segmentation",
     subtitle: "Computer Vision",
     description: "Trying out Intel's MiDaS Model with greyscale and Upscaler for better results",
     image: "/images/projects/depth-seg.png",
