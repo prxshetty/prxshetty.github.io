@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Dept Segmentation",
     subtitle: "Computer Vision",
-    description: "A machine learning project for customer segmentation in retail.",
+    description: "Trying out Intel's MiDaS Model with greyscale and Upscaler for better results",
     image: "/images/projects/depth-seg.png",
     link: "https://github.com/prxshetty/midas-depthseg",
     technologies: ["MiDaS", "PyTorch", "Scikit-image", "CUDA"]
@@ -43,7 +43,7 @@ const projects = [
   {
     title: "AutoMail AI",
     subtitle: "Natural Language Processing",
-    description: "An AI-powered email automation system using natural language processing.",
+    description: "An AI-powered email automation system using NLP, DocTran, API.",
     image: "/images/projects/automail_ai.png",
     link: "https://github.com/prxshetty/automail-ai",
     technologies: ["Python", "NLP", "TensorFlow", "Flask", "OpenAI API","DocTran"]
