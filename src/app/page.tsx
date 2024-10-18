@@ -35,7 +35,7 @@ const projects = [
   {
     title: "Large Language Model",
     subtitle: "Deep Learning",
-    description: "A machine learning project to build a large language model from scratch, inspired by Karpathy&apos;s nn.",
+    description: "A machine learning project to build a large language model from scratch, inspired by Karpathy's nn.",
     image: "/images/projects/llm-scratch.jpg",
     link: "https://github.com/prxshetty/karpathy-nn",
     technologies: ["Python", "PyTorch", "Neural Networks", "Statistics"]
