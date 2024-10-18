@@ -188,19 +188,22 @@ const reviews = [
     name: "Gurvansh Singh",
     role: "Senior Technology Mentor @ Athena Education, managed Pranam directly",
     review: "Pranam, KSI's Research intern, exceeded expectations with his skills in machine learning and data analysis on an insurance cost prediction project. His technical skills, work ethic, and adaptability made him a valuable asset to the team, and he has potential for success in any data-driven role.",
-    avatar: "/images/review/gs.jpeg"
+    avatar: "/images/review/gs.jpeg",
+    linkedin: "https://www.linkedin.com/in/gurvansh-singh-6a0991112/" 
   },
   {
     name: "Ritesh Deshmukh",
     role: "Indira School of Business Studies, PGDM,  lead by Pranam directly",
     review: "Working with Pranam was a pleasure. His deep understanding of mysql and frontend technologies for our final project was impressive.",
-    avatar: "/images/review/rd.jpeg"
+    avatar: "/images/review/rd.jpeg",
+    linkedin: "https://www.linkedin.com/in/ritesh-deshmukh-aa63321a7/"
   },
   {
     name: "Sudharshan Mahabal",
     role: "AI Solutions Leader, Ex-Silicon Valley, managed Pranam directly",
     review: "I highly recommend Pranam, a talented intern who demonstrated exceptional expertise in machine learning, model building, and MLOps deployment during his tenure at Marva.ai. His strong work ethic, knowledge of financial markets, and proficiency in ML and MLOps make him a valuable asset to any team.",
-    avatar: "/images/review/sm.jpeg"
+    avatar: "/images/review/sm.jpeg",
+    linkedin: "https://www.linkedin.com/in/sudarshan-mahabal/" 
   }
 ];
 
@@ -527,7 +530,16 @@ export default function Home() {
                 >
                   {[...reviews, ...reviews].map((review, index) => (
                     <div key={index} className="w-1/2 px-3">
-                      <div className="rounded-lg p-6 border border-gray-200">
+                      <div className="rounded-lg p-6 border border-gray-200 relative">
+                        <a 
+                          href={review.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="absolute top-2 right-2 text-[#0077B5] hover:text-[#00669c] transition-colors duration-300"
+                          aria-label={`LinkedIn profile of ${review.name}`}
+                        >
+                          <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
+                        </a>
                         <div className="flex items-center mb-4">
                           <Image
                             src={review.avatar}
