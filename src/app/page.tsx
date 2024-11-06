@@ -214,55 +214,61 @@ const reviews = [
     linkedin: "https://www.linkedin.com/in/sudarshan-mahabal/" 
   }
 ];
-
-// First, add the courses data array after the blogs array
 const courses = [
   {
-    title: "Deep Learning Specialization",
-    platform: "Coursera",
-    instructor: "Andrew Ng",
-    dateCompleted: "March 2024",
-    description: "Completed comprehensive training in neural networks, CNN, RNN, and deep learning projects.",
-    image: "/images/courses/deep-learning.jpg",
-    link: "https://www.coursera.org/specializations/deep-learning",
-    skills: ["Neural Networks", "CNN", "RNN", "Python", "TensorFlow"]
+    title: "How Diffusion Models Work",
+    platform: "DeepLearning.AI",
+    instructor: "Sharon Zhou",
+    dateCompleted: "October 2024",
+    description: "Learn and build diffusion models from the ground up, implement algorithms to speed up sampling.",
+    image: "/images/courses/diffusion.png",
+    link: "https://learn.deeplearning.ai/accomplishments/8b950f83-9126-449e-8e2c-90fa8d6dc3c5",
+    skills: ["Diffusion Models", "GenAI Applications", "Deep Learning", "Generative Models"]
   },
   {
-    title: "Machine Learning Engineering for Production (MLOps)",
-    platform: "Coursera",
-    instructor: "Andrew Ng",
-    dateCompleted: "February 2024",
-    description: "Learned end-to-end ML lifecycle, deployment strategies, and ML systems design.",
-    image: "/images/courses/mlops.jpg",
-    link: "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops",
-    skills: ["MLOps", "TensorFlow Extended", "ML Deployment", "Monitoring"]
+    title: "Introducing Multimodal Llama 3.2!",
+    platform: "DeepLearning.AI",
+    instructor: "Amit Sangani",
+    dateCompleted: "October 2024",
+    description: "Introducing new Llama 3.2 models to build AI applications with multimodality",
+    image: "/images/courses/llama32.png",
+    link: "https://learn.deeplearning.ai/accomplishments/751c6273-d073-4c78-804f-8834f04e8861",
+    skills: ["Agents", "Chatbots", "Computer Vision", "Fine-tuning","Prompt Engineering"]
   },
   {
-    title: "Natural Language Processing Specialization",
-    platform: "Coursera",
-    instructor: "DeepLearning.AI",
-    dateCompleted: "January 2024",
-    description: "Mastered NLP techniques including transformers, attention mechanisms, and sequence models.",
-    image: "/images/courses/nlp.jpg",
+    title: "Retrieval Optimization: Tokenization to Vector Quantization!",
+    platform: "DeepLearning.AI",
+    instructor: "Qdrant",
+    dateCompleted: "September 2024",
+    description: "Build faster and more relevant vector search for your LLM applications",
+    image: "/images/courses/qdrant.png",
+    link: "https://learn.deeplearning.ai/accomplishments/e295027b-6b96-4911-b87a-5e2cef36c948",
+    skills: ["AI Frameworks", "Agents", "RAGS", "Generative Models"]
+  },
+  {
+    title: "Multi AI Agent Systems with crewAI!",
+    platform: "DeepLearning.AI",
+    instructor: "Joao Moura",
+    dateCompleted: "September 2024",
+    description: "Automated workflows with multi-AI agent systems. Designing and prompting a team of AI agents through natural language.",
+    image: "/images/courses/crewai.png",
     link: "https://www.coursera.org/specializations/natural-language-processing",
-    skills: ["NLP", "BERT", "Transformers", "Sequence Models"]
+    skills: ["AI Frameworks", "Agents", "RAGS", "Task Automation"]
   },
   {
-    title: "AWS Machine Learning Specialty",
-    platform: "Amazon Web Services",
-    instructor: "AWS Training",
-    dateCompleted: "December 2023",
-    description: "Certification preparation covering ML on AWS, SageMaker, and cloud deployment.",
-    image: "/images/courses/aws-ml.jpg",
-    link: "https://aws.amazon.com/certification/certified-machine-learning-specialty/",
-    skills: ["AWS", "SageMaker", "Cloud ML", "MLOps"]
+    title: "Oracle Cloud Infrastructure 2024 Generative AI Certified Professional",
+    platform: "Oracle",
+    instructor: "Oracle Cloud Infrastructure",
+    dateCompleted: "July 2024",
+    description: "strong understanding of the Large Language Models (LLMs) and are skilled at using OCI Generative AI Service.",
+    image: "/images/courses/oracle.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=5C2C44615B73F678DF85E44418348C3535ABCE032C9F7E82F196472434C80BCB",
+    skills: ["LLMS", "OCI Generative AI Services", "RAGS"]
   }
 ];
 
-// Add state for courses pagination
 const [courseIndex, setCourseIndex] = useState(0);
 
-// Add navigation functions for courses
 const nextCourses = () => {
   setCourseIndex((prevIndex) => Math.min(prevIndex + 1, courses.length - 3));
 };
