@@ -17,6 +17,14 @@ const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
 
 const projects = [
   {
+    title: "JobTrail",
+    subtitle: "Web Development",
+    description: "Job Trail is a Chrome extension that automatically categorizes Gmail emails related to job applications based on their content",
+    image: "/images/projects/jobtrail.png",
+    link: "https://github.com/prxshetty/jobtrail",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Google Fonts"]
+  },
+  {
     title: "Depth Segmentation",
     subtitle: "Computer Vision",
     description: "Trying out Intel's MiDaS Model with greyscale and Upscaler for better results",
