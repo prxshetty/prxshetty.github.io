@@ -214,6 +214,7 @@ const reviews = [
     linkedin: "https://www.linkedin.com/in/sudarshan-mahabal/" 
   }
 ];
+
 const courses = [
   {
     title: "How Diffusion Models Work",
@@ -267,22 +268,13 @@ const courses = [
   }
 ];
 
-const [courseIndex, setCourseIndex] = useState(0);
-
-const nextCourses = () => {
-  setCourseIndex((prevIndex) => Math.min(prevIndex + 1, courses.length - 3));
-};
-
-const prevCourses = () => {
-  setCourseIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-};
-
 export default function Home() {
   const [projectIndex, setProjectIndex] = useState(0);
   const [blogIndex, setBlogIndex] = useState(0);
   const [reviewOffset, setReviewOffset] = useState(0);
   const [academicIndex, setAcademicIndex] = useState(0);
   const [experienceIndex, setExperienceIndex] = useState(0);
+  const [courseIndex, setCourseIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -325,6 +317,14 @@ export default function Home() {
 
   const prevExperience = () => {
     setExperienceIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+  };
+
+  const nextCourses = () => {
+    setCourseIndex((prevIndex) => Math.min(prevIndex + 1, courses.length - 3));
+  };
+
+  const prevCourses = () => {
+    setCourseIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
   return (
