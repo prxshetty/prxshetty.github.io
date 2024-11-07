@@ -498,6 +498,62 @@ export default function Home() {
               </div>
             </section>
 
+            {/* Courses section */}
+            <section className="mb-10 relative overflow-hidden">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Courses</h2>
+                <div className="flex space-x-2">
+                  <button 
+                    onClick={prevCourses} 
+                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${courseIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+                    disabled={courseIndex === 0}
+                  >
+                    <FontAwesomeIcon icon="chevron-left" className="h-6 w-6" />
+                  </button>
+                  <button 
+                    onClick={nextCourses} 
+                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${courseIndex === courses.length - 3 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+                    disabled={courseIndex === courses.length - 3}
+                  >
+                    <FontAwesomeIcon icon="chevron-right" className="h-6 w-6" />
+                  </button>
+                </div>
+              </div>
+              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${courseIndex * 33.33}%)` }}>
+                {courses.map((course, index) => (
+                  <div key={index} className="w-1/3 flex-shrink-0 px-3">
+                    <a href={course.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                      <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
+                        <Image
+                          src={course.image}
+                          alt={course.title}
+                          width={400}
+                          height={200}
+                          className="w-full h-48 object-cover rounded-lg"
+                        />
+                        <div className="p-4 flex-grow flex flex-col">
+                          <div className="flex justify-between items-start mb-2">
+                            <p className="text-[#592be2] text-sm font-semibold">{course.platform}</p>
+                            <p className="text-gray-500 text-sm">{course.dateCompleted}</p>
+                          </div>
+                          <h3 className="font-medium text-lg mb-2">{course.title}</h3>
+                          <p className="text-gray-600 text-sm mb-2">Instructor: {course.instructor}</p>
+                          <p className="text-gray-600 text-sm mb-3 flex-grow">{course.description}</p>
+                          <div className="flex flex-wrap gap-2">
+                            {course.skills.map((skill, skillIndex) => (
+                              <span key={skillIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* Academic Journey section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
@@ -629,62 +685,6 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </section>
-
-            {/* Courses section */}
-            <section className="mb-10 relative overflow-hidden">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Courses</h2>
-                <div className="flex space-x-2">
-                  <button 
-                    onClick={prevCourses} 
-                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${courseIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
-                    disabled={courseIndex === 0}
-                  >
-                    <FontAwesomeIcon icon="chevron-left" className="h-6 w-6" />
-                  </button>
-                  <button 
-                    onClick={nextCourses} 
-                    className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${courseIndex === courses.length - 3 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
-                    disabled={courseIndex === courses.length - 3}
-                  >
-                    <FontAwesomeIcon icon="chevron-right" className="h-6 w-6" />
-                  </button>
-                </div>
-              </div>
-              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${courseIndex * 33.33}%)` }}>
-                {courses.map((course, index) => (
-                  <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                    <a href={course.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                      <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
-                        <Image
-                          src={course.image}
-                          alt={course.title}
-                          width={400}
-                          height={200}
-                          className="w-full h-48 object-cover rounded-lg"
-                        />
-                        <div className="p-4 flex-grow flex flex-col">
-                          <div className="flex justify-between items-start mb-2">
-                            <p className="text-[#592be2] text-sm font-semibold">{course.platform}</p>
-                            <p className="text-gray-500 text-sm">{course.dateCompleted}</p>
-                          </div>
-                          <h3 className="font-medium text-lg mb-2">{course.title}</h3>
-                          <p className="text-gray-600 text-sm mb-2">Instructor: {course.instructor}</p>
-                          <p className="text-gray-600 text-sm mb-3 flex-grow">{course.description}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {course.skills.map((skill, skillIndex) => (
-                              <span key={skillIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                ))}
               </div>
             </section>
           </div>
