@@ -45,7 +45,7 @@ This project is a personal portfolio website for Pranam Prakash Shetty, showcasi
 
 - `src/app/page.tsx`: Main component containing the entire portfolio
 - `public/images/`: Directory containing all images used in the portfolio
-- `public/docs/`: Directory containing the resume PDF
+- `public/docs/`: Directory containing the resume PDF, courses, certifications
 
 ## Customization
 
