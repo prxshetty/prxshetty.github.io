@@ -108,7 +108,7 @@ const blogs = [
     title: "Claude can now use computers….",
     description: "What if your AI assistant could navigate a computer just like you do? With Anthropic's latest update, Claude 3.5 Sonnet can now interact…",
     link: "https://medium.com/@prxshetty/claude-can-now-use-computers-9b056d1e0e8b",
-    image: "/images/blogs/compuse.webp",
+    image: "/images/blogs/computeruse.png",
     date: "Dec 3, 2024",
   },
   {
