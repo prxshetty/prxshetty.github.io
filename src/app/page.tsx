@@ -101,7 +101,7 @@ const blogs = [
     title: "Forget SQL Headaches: Learn How to Convert schemas to a Graph Database Today",
     description: "Transitioning from a relational database model to a graph database can feel like navigating uncharted territory, especially if you're…",
     link: "https://medium.com/@prxshetty/forget-sql-headaches-learn-how-to-convert-schemas-to-a-graph-database-today-b78c144716ec",
-    image: "/images/blogs/graph.webp",
+    image: "/images/blogs/graphql.webp",
     date: "Dec 4, 2024",
   },
   {
