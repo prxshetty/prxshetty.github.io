@@ -216,8 +216,8 @@ const academics = [
   {
     degree: "Masters of Science, Data Science",
     institution: "Rochester Institute of Technology, NY",
-    year: "2023 - Present",
-    gpa: "3.93 (SEM 2)",
+    year: "2023 - 2025",
+    gpa: "3.85 (SEM 4)",
     link: "https://www.rit.edu/",
     comment: "After completing my Masters, I would have developed a strong foundation in data science principles, software engineering, database design, and advanced analytics."
   },
@@ -436,8 +436,8 @@ export default function Home() {
           <div className="rounded-lg p-6">
             {/* Projects section */}
             <section className="mb-10 relative overflow-hidden">
-              <h2 className={`${robotoMono.className} section-title`}>Projects</h2>
               <div className="flex justify-between items-center mb-4">
+                <h2 className={`${robotoMono.className} section-title`}>Projects</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevProjects} 
@@ -495,7 +495,7 @@ export default function Home() {
             {/* Blog Posts section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Blog Posts</h2>
+                <h2 className={`${robotoMono.className} section-title`}>Blog Posts</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevBlogs} 
@@ -513,7 +513,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${blogIndex * 33.33}%)` }}>
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${blogIndex * 33.33}%)` }}>
                 {blogs.map((blog, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-3">
                     <a href={blog.link} target="_blank" rel="noopener noreferrer" className="block h-full">
@@ -542,7 +542,7 @@ export default function Home() {
             {/* Courses section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Courses</h2>
+                <h2 className={`${robotoMono.className} section-title`}>Courses</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevCourses} 
@@ -560,7 +560,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${courseIndex * 33.33}%)` }}>
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${courseIndex * 33.33}%)` }}>
                 {courses.map((course, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-3">
                     <a href={course.link} target="_blank" rel="noopener noreferrer" className="block h-full">
@@ -598,7 +598,7 @@ export default function Home() {
             {/* Academic Journey section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Academic Journey</h2>
+                <h2 className={`${robotoMono.className} section-title`}>Academic Journey</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevAcademic} 
@@ -616,10 +616,10 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${academicIndex * 100}%)` }}>
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${academicIndex * 100}%)` }}>
                 {academics.map((academic, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <div className="rounded-lg p-6">
+                    <div className="content-tile p-6">
                       <p className="text-gray-600 text-sm mb-2">{academic.year}</p>
                       <h3 className="font-medium text-lg text-black">{academic.degree}</h3>
                       <p className="text-gray-700">{academic.institution}</p>
@@ -634,7 +634,7 @@ export default function Home() {
             {/* Experience section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Experience</h2>
+                <h2 className={`${robotoMono.className} section-title`}>Experience</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevExperience} 
@@ -652,10 +652,10 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${experienceIndex * 100}%)` }}>
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${experienceIndex * 100}%)` }}>
                 {experiences.map((experience, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <div className="rounded-lg p-6">
+                    <div className="content-tile p-6">
                       <p className="text-gray-600 text-sm mb-2">{experience.duration}</p>
                       <h3 className="font-medium text-lg text-black">{experience.title}</h3>
                       <p className="text-gray-700">{experience.company}</p>
