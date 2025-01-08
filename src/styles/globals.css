@@ -6,6 +6,8 @@
   --grid-size: 30px;
   --grid-strength: 1px;
   --grid-color: rgba(89, 43, 226, 0.05);
+  --primary: #592be2;
+  --primary-light: rgba(89, 43, 226, 0.1);
 }
 
 .bg-grid {
@@ -15,8 +17,22 @@
     linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength));
 }
 
-.bg-grid:hover {
-  animation: grid-fade 2s infinite;
+.content-tile {
+  @apply bg-white rounded-lg border border-gray-100 shadow-sm transition-all duration-200 ease-out;
+  transform: translateY(0);
+}
+
+.content-tile:hover {
+  @apply border-[#592be2]/20 shadow-lg;
+  transform: translateY(-4px);
+}
+
+.section-container:hover .content-tile:not(:hover) {
+  @apply opacity-50 blur-[0.5px];
+}
+
+.section-title {
+  @apply text-xl font-light text-gray-600 mb-6 border-b border-[#592be2]/10 pb-2;
 }
 
 @keyframes grid-fade {

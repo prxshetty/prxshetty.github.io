@@ -436,8 +436,8 @@ export default function Home() {
           <div className="rounded-lg p-6">
             {/* Projects section */}
             <section className="mb-10 relative overflow-hidden">
+              <h2 className={`${robotoMono.className} section-title`}>Projects</h2>
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>Projects</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevProjects} 
@@ -455,18 +455,18 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${projectIndex * 33.33}%)` }}>
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${projectIndex * 33.33}%)` }}>
                 {projects.map((project, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                    <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
+                    <div className="content-tile h-full">
                       <Image
                         src={project.image}
                         alt={project.title}
                         width={400}
                         height={200}
-                        className="w-full h-48 object-cover rounded-lg"
+                        className="w-full h-48 object-cover rounded-t-lg"
                       />
-                      <div className="p-4 flex-grow flex flex-col">
+                      <div className="p-6">
                         <p className="text-[#592be2] text-sm font-semibold mb-1">{project.subtitle}</p>
                         <h3 className="font-medium text-lg mb-2">{project.title}</h3>
                         <div className="flex flex-wrap gap-2 mb-3">
@@ -476,9 +476,14 @@ export default function Home() {
                             </span>
                           ))}
                         </div>
-                        <p className="text-gray-600 text-sm mb-3 flex-grow">{project.description}</p>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[#592be2] hover:text-[#4a24b8] mt-auto inline-flex items-center">
-                          Read more <span className="ml-1">&#8594;</span>
+                        <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#592be2] hover:text-[#4a24b8] inline-flex items-center text-sm font-medium"
+                        >
+                          View Project <span className="ml-1">→</span>
                         </a>
                       </div>
                     </div>
