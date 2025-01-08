@@ -2,5 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add any global styles here */
-/* Include any styles from the previous src/app/globals.css file that you want to keep */
+:root {
+  --grid-size: 30px;
+  --grid-strength: 1px;
+  --grid-color: rgba(89, 43, 226, 0.05);
+}
+
+.bg-grid {
+  background-size: var(--grid-size) var(--grid-size);
+  background-image:
+    linear-gradient(to right, var(--grid-color) var(--grid-strength), transparent var(--grid-strength)),
+    linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength));
+}
+
+.bg-grid:hover {
+  animation: grid-fade 2s infinite;
+}
+
+@keyframes grid-fade {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}

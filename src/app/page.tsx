@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -10,7 +9,6 @@ import { faTwitter, faKaggle, faLinkedin, faGithub } from '@fortawesome/free-bra
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-// Add the icons to the library
 library.add(faTwitter, faKaggle, faLinkedin, faGithub, faFileAlt, faChevronLeft, faChevronRight);
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
@@ -364,13 +362,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white bg-grid">
       {/* Thin strip at the top */}
       <div className="h-1 bg-[#592be2] w-full"></div>
       
       <div className="flex relative">
-        {/* Sidebar */}
-        <aside className="w-1/4 bg-gray-100 pl-8 pr-4 z-10 relative">
+        {/* Sidebar - add a semi-transparent background to ensure readability */}
+        <aside className="w-1/4 bg-gray-100/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
           <div className="sticky top-8">
             <div className="w-32 h-32 mb-3 overflow-hidden rounded-full">
               <Image
@@ -433,8 +431,8 @@ export default function Home() {
           </div>
         </aside>
 
-        {/* Main content */}
-        <main className="w-3/4 pl-8 pr-8 bg-white overflow-hidden">
+        {/* Main content - add a semi-transparent background */}
+        <main className="w-3/4 pl-8 pr-8 bg-white/95 overflow-hidden backdrop-blur-sm">
           <div className="rounded-lg p-6">
             {/* Projects section */}
             <section className="mb-10 relative overflow-hidden">
