@@ -516,24 +516,28 @@ export default function Home() {
               <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${blogIndex * 33.33}%)` }}>
                 {blogs.map((blog, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                    <a href={blog.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                      <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
-                        <div className="relative">
-                          <Image
-                            src={blog.image}
-                            alt={blog.title}
-                            width={400}
-                            height={200}
-                            className="w-full h-48 object-cover rounded-lg"
-                          />
-                        </div>
-                        <div className="p-4 flex-grow flex flex-col">
-                          <p className="text-gray-500 text-sm mb-2">{blog.date}</p>
-                          <h3 className="font-medium text-lg mb-2">{blog.title}</h3>
-                          <p className="text-gray-600 text-sm flex-grow">{blog.description}</p>
-                        </div>
+                    <div className="content-tile h-full">
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                      />
+                      <div className="p-4 flex-grow flex flex-col">
+                        <p className="text-gray-500 text-sm mb-2">{blog.date}</p>
+                        <h3 className="font-medium text-lg mb-2">{blog.title}</h3>
+                        <p className="text-gray-600 text-sm flex-grow">{blog.description}</p>
+                        <a 
+                          href={blog.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#592be2] hover:text-[#4a24b8] inline-flex items-center text-sm font-medium mt-4"
+                        >
+                          Read More <span className="ml-1">→</span>
+                        </a>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -563,33 +567,39 @@ export default function Home() {
               <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${courseIndex * 33.33}%)` }}>
                 {courses.map((course, index) => (
                   <div key={index} className="w-1/3 flex-shrink-0 px-3">
-                    <a href={course.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                      <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
-                        <Image
-                          src={course.image}
-                          alt={course.title}
-                          width={400}
-                          height={200}
-                          className="w-full h-48 object-cover rounded-lg"
-                        />
-                        <div className="p-4 flex-grow flex flex-col">
-                          <div className="flex justify-between items-start mb-2">
-                            <p className="text-[#592be2] text-sm font-semibold">{course.platform}</p>
-                            <p className="text-gray-500 text-sm">{course.dateCompleted}</p>
-                          </div>
-                          <h3 className="font-medium text-lg mb-2">{course.title}</h3>
-                          <p className="text-gray-600 text-sm mb-2">Instructor: {course.instructor}</p>
-                          <p className="text-gray-600 text-sm mb-3 flex-grow">{course.description}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {course.skills.map((skill, skillIndex) => (
-                              <span key={skillIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
+                    <div className="content-tile h-full">
+                      <Image
+                        src={course.image}
+                        alt={course.title}
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                      />
+                      <div className="p-4 flex-grow flex flex-col">
+                        <div className="flex justify-between items-start mb-2">
+                          <p className="text-[#592be2] text-sm font-semibold">{course.platform}</p>
+                          <p className="text-gray-500 text-sm">{course.dateCompleted}</p>
                         </div>
+                        <h3 className="font-medium text-lg mb-2">{course.title}</h3>
+                        <p className="text-gray-600 text-sm mb-2">Instructor: {course.instructor}</p>
+                        <p className="text-gray-600 text-sm mb-3 flex-grow">{course.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {course.skills.map((skill, skillIndex) => (
+                            <span key={skillIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                        <a 
+                          href={course.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#592be2] hover:text-[#4a24b8] inline-flex items-center text-sm font-medium mt-4"
+                        >
+                          View Certificate <span className="ml-1">→</span>
+                        </a>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 ))}
               </div>
