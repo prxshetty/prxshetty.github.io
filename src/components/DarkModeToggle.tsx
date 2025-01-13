@@ -34,7 +34,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="fixed right-4 bottom-4 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200 shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600"
+      className="fixed right-0 top-1/2 -translate-y-1/2 p-2 rounded-l-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200 shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600"
       aria-label="Toggle dark mode"
     >
       <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className="w-4 h-4" />

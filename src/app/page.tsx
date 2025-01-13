@@ -363,11 +363,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a1929] bg-grid">
-      {/* Thin strip at the top */}
       <div className="h-1 bg-[#592be2] w-full"></div>
       
       <div className="flex relative">
-        {/* Sidebar - lighter navy blue */}
         <aside className="w-1/4 bg-gray-100/95 dark:bg-[#0f2942]/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
           <div className="sticky top-8">
             <div className="w-32 h-32 mb-3 overflow-hidden rounded-full">
@@ -442,10 +440,8 @@ export default function Home() {
           </div>
         </aside>
 
-        {/* Main content */}
         <main className="w-3/4 pl-8 pr-8 bg-white/95 dark:bg-[#0a1929]/95 overflow-hidden backdrop-blur-sm">
           <div className="rounded-lg p-6">
-            {/* Projects section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Projects</h2>
@@ -507,7 +503,6 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Blog Posts section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Blog Posts</h2>
@@ -562,7 +557,6 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Courses section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Courses</h2>
@@ -628,7 +622,6 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Academic Journey section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Academic Journey</h2>
@@ -664,7 +657,6 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Experience section */}
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Experience</h2>
@@ -706,7 +698,6 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Reviews section */}
             <section className="mb-10">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>What People Say</h2>
