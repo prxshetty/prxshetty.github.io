@@ -6,6 +6,7 @@ import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -13,6 +14,12 @@ const DarkModeToggle = () => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     }
+
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleDarkMode = () => {
@@ -22,15 +29,15 @@ const DarkModeToggle = () => {
     document.documentElement.classList.toggle('dark');
   };
 
-  return (
+  return isVisible ? (
     <button
       onClick={toggleDarkMode}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200"
+      className="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200"
       aria-label="Toggle dark mode"
     >
       <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className="w-5 h-5" />
     </button>
-  );
+  ) : null;
 };
 
 export default DarkModeToggle;

@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import Script from 'next/script';
 import { Metadata } from 'next';
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 export const metadata: Metadata = {
   title: "Pranam's Portfolio",
@@ -27,7 +28,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        <DarkModeToggle />
+        {children}
+      </body>
     </html>
   )
 }
