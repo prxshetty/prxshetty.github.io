@@ -362,13 +362,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white bg-grid">
+    <div className="min-h-screen bg-white dark:bg-gray-900 bg-grid">
       {/* Thin strip at the top */}
       <div className="h-1 bg-[#592be2] w-full"></div>
       
       <div className="flex relative">
-        {/* Sidebar - add a semi-transparent background to ensure readability */}
-        <aside className="w-1/4 bg-gray-100/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
+        {/* Sidebar */}
+        <aside className="w-1/4 bg-gray-100/95 dark:bg-gray-800/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
           <div className="sticky top-8">
             <div className="w-32 h-32 mb-3 overflow-hidden rounded-full">
               <Image
@@ -379,13 +379,14 @@ export default function Home() {
                 className="object-cover w-full h-full"
               />
             </div>
-            <h1 className="text-2xl font-semibold mb-1">Pranam Prakash Shetty</h1>
-            <p className="text-md text-gray-700 mb-1">Student at RIT</p>
-            <p className="text-gray-600 mb-4 text-sm">
+            <h1 className="text-2xl font-semibold mb-1 dark:text-white">Pranam Prakash Shetty</h1>
+            <p className="text-md text-gray-700 dark:text-gray-300 mb-1">Student at RIT</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
               <i className="fas fa-map-marker-alt mr-1"></i>Rochester, NY
             </p>
             <div className="flex space-x-3 mb-3 items-center">
-              <a href="https://twitter.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+              <a href="https://twitter.com/prxshetty" target="_blank" rel="noopener noreferrer" 
+                 className="text-gray-700 dark:text-gray-400 hover:text-[#592be2] dark:hover:text-[#592be2]">
                 <FontAwesomeIcon icon={['fab', 'twitter']} className="text-xl" />
               </a>
               <a href="https://www.kaggle.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
@@ -414,16 +415,17 @@ export default function Home() {
                 <i className="far fa-file-alt mr-2"></i> Resume
               </a>
             </div>
-            <h3 className="font-semibold mb-2">About</h3>
-            <p className="text-sm text-gray-600 mb-6">
+            <h3 className="font-semibold mb-2 dark:text-white">About</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
               I'm a Data science graduate at RIT. I love neural architectures. 
               When I'm not coding, you'll find me enjoying coffee and chess.
               Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
             </p>
-            <h3 className="font-semibold mb-2">Skills</h3>
+            <h3 className="font-semibold mb-2 dark:text-white">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {["Python", "SQL", "Deep Learning", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn", "Data Visualization", "Git", "NLP", "Computer Vision", "GANs", "LLMs", "BERT", "GPT", "Transformers", "Hugging Face", "Reinforcement Learning"].map((skill) => (
-                <span key={skill} className="bg-[#592be2]/10 text-[#592be2] px-3 py-1 rounded-full text-xs font-normal">
+                <span key={skill} 
+                      className="bg-[#592be2]/10 dark:bg-[#592be2]/20 text-[#592be2] dark:text-[#592be2] px-3 py-1 rounded-full text-xs font-normal">
                   {skill}
                 </span>
               ))}
@@ -431,8 +433,8 @@ export default function Home() {
           </div>
         </aside>
 
-        {/* Main content - add a semi-transparent background */}
-        <main className="w-3/4 pl-8 pr-8 bg-white/95 overflow-hidden backdrop-blur-sm">
+        {/* Main content */}
+        <main className="w-3/4 pl-8 pr-8 bg-white/95 dark:bg-gray-900/95 overflow-hidden backdrop-blur-sm">
           <div className="rounded-lg p-6">
             {/* Projects section */}
             <section className="mb-10 relative overflow-hidden">
