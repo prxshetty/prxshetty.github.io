@@ -56,3 +56,15 @@
 .content-tile p {
   @apply text-gray-600 dark:text-gray-300 transition-colors duration-200;
 }
+
+/* Update the content-tile styles to include review section titles */
+.content-tile h3, 
+.reviews-section h3 {
+  @apply text-gray-900 dark:text-white transition-colors duration-200;
+}
+
+/* Update tag text colors for better visibility in dark mode */
+.content-tile .bg-[#592be2]/10,
+span[class*="bg-[#592be2]/"] {
+  @apply dark:text-white/90 dark:bg-[#592be2]/30;
+}

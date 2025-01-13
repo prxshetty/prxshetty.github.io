@@ -385,23 +385,32 @@ export default function Home() {
               <i className="fas fa-map-marker-alt mr-1"></i>Rochester, NY
             </p>
             <div className="flex space-x-3 mb-3 items-center">
-              <a href="https://twitter.com/prxshetty" target="_blank" rel="noopener noreferrer" 
-                 className="text-gray-700 dark:text-gray-400 hover:text-[#592be2] dark:hover:text-[#592be2]">
+              <a href="https://twitter.com/prxshetty" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
                 <FontAwesomeIcon icon={['fab', 'twitter']} className="text-xl" />
               </a>
-              <a href="https://www.kaggle.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+              <a href="https://www.kaggle.com/prxshetty" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
                 <FontAwesomeIcon icon={['fab', 'kaggle']} className="text-xl" />
               </a>
-              <a href="https://linkedin.com/in/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+              <a href="https://linkedin.com/in/prxshetty" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
                 <FontAwesomeIcon icon={['fab', 'linkedin']} className="text-xl" />
               </a>
-              <a href="https://github.com/prxshetty" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#592be2]">
+              <a href="https://github.com/prxshetty" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
                 <FontAwesomeIcon icon={['fab', 'github']} className="text-xl" />
               </a>
-              <a 
-                href="mailto:prxshetty@gmail.com" 
-                className="text-gray-700 hover:text-[#592be2] border border-gray-700 px-3 py-1 rounded-full text-sm transition-colors duration-300"
-              >
+              <a href="mailto:prxshetty@gmail.com" 
+                 className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] border border-gray-700 dark:border-gray-200 px-3 py-1 rounded-full text-sm transition-colors duration-300 hover:border-[#592be2] dark:hover:border-[#592be2]">
                 Email me
               </a>
             </div>
@@ -700,7 +709,7 @@ export default function Home() {
             {/* Reviews section */}
             <section className="mb-10">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600`}>What People Say</h2>
+                <h2 className={`${robotoMono.className} section-title`}>What People Say</h2>
                 <div className="flex items-center space-x-2">
                   <i 
                     className="fas fa-info-circle text-[#592be2] cursor-pointer" 
@@ -713,7 +722,7 @@ export default function Home() {
               <div className="overflow-hidden">
                 <div 
                   id="reviews-container" 
-                  className="flex transition-transform duration-500 ease-in-out" 
+                  className="section-container flex transition-transform duration-500 ease-in-out" 
                   style={{
                     width: `${reviews.length * 100}%`,
                     transform: `translateX(-${reviewOffset}%)`,
@@ -722,30 +731,32 @@ export default function Home() {
                 >
                   {[...reviews, ...reviews].map((review, index) => (
                     <div key={index} className="w-1/2 px-3">
-                      <div className="rounded-lg p-6 border border-gray-200 relative">
-                        <a 
-                          href={review.linkedin} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="absolute top-2 right-2 text-[#0077B5] hover:text-[#00669c] transition-colors duration-300"
-                          aria-label={`LinkedIn profile of ${review.name}`}
-                        >
-                          <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
-                        </a>
-                        <div className="flex items-center mb-4">
-                          <Image
-                            src={review.avatar}
-                            alt={review.name}
-                            width={48}
-                            height={48}
-                            className="rounded-full mr-4"
-                          />
-                          <div>
-                            <h3 className="font-medium text-lg">{review.name}</h3>
-                            <p className="text-sm text-gray-600">{review.role}</p>
+                      <div className="content-tile h-full">
+                        <div className="p-6 relative">
+                          <a 
+                            href={review.linkedin} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="absolute top-2 right-2 text-[#0077B5] hover:text-[#00669c] transition-colors duration-300"
+                            aria-label={`LinkedIn profile of ${review.name}`}
+                          >
+                            <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
+                          </a>
+                          <div className="flex items-center mb-4">
+                            <Image
+                              src={review.avatar}
+                              alt={review.name}
+                              width={48}
+                              height={48}
+                              className="rounded-full mr-4"
+                            />
+                            <div>
+                              <h3 className="font-medium text-lg">{review.name}</h3>
+                              <p className="text-sm text-gray-600 dark:text-gray-400">{review.role}</p>
+                            </div>
                           </div>
+                          <p className="text-gray-700 dark:text-gray-300 italic">&ldquo;{review.review}&rdquo;</p>
                         </div>
-                        <p className="text-gray-700 italic">&ldquo;{review.review}&rdquo;</p>
                       </div>
                     </div>
                   ))}
