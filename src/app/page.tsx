@@ -465,6 +465,10 @@ export default function Home() {
                         width={400}
                         height={200}
                         className="w-full h-48 object-cover rounded-t-lg"
+                        loading={index < 3 ? "eager" : "lazy"}
+                        quality={75}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
                       />
                       <div className="p-6">
                         <p className="text-[#592be2] text-sm font-semibold mb-1">{project.subtitle}</p>
@@ -523,6 +527,10 @@ export default function Home() {
                         width={400}
                         height={200}
                         className="w-full h-48 object-cover rounded-t-lg"
+                        loading={index < 3 ? "eager" : "lazy"}
+                        quality={75}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
                       />
                       <div className="p-4 flex-grow flex flex-col">
                         <p className="text-gray-500 text-sm mb-2">{blog.date}</p>
@@ -574,6 +582,10 @@ export default function Home() {
                         width={400}
                         height={200}
                         className="w-full h-48 object-cover rounded-t-lg"
+                        loading={index < 3 ? "eager" : "lazy"}
+                        quality={75}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
                       />
                       <div className="p-4 flex-grow flex flex-col">
                         <div className="flex justify-between items-start mb-2">
