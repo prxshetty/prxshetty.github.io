@@ -362,13 +362,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 bg-grid">
+    <div className="min-h-screen bg-white dark:bg-[#0a1929] bg-grid">
       {/* Thin strip at the top */}
       <div className="h-1 bg-[#592be2] w-full"></div>
       
       <div className="flex relative">
-        {/* Sidebar */}
-        <aside className="w-1/4 bg-gray-100/95 dark:bg-gray-800/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
+        {/* Sidebar - lighter navy blue */}
+        <aside className="w-1/4 bg-gray-100/95 dark:bg-[#0f2942]/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
           <div className="sticky top-8">
             <div className="w-32 h-32 mb-3 overflow-hidden rounded-full">
               <Image
@@ -434,7 +434,7 @@ export default function Home() {
         </aside>
 
         {/* Main content */}
-        <main className="w-3/4 pl-8 pr-8 bg-white/95 dark:bg-gray-900/95 overflow-hidden backdrop-blur-sm">
+        <main className="w-3/4 pl-8 pr-8 bg-white/95 dark:bg-[#0a1929]/95 overflow-hidden backdrop-blur-sm">
           <div className="rounded-lg p-6">
             {/* Projects section */}
             <section className="mb-10 relative overflow-hidden">

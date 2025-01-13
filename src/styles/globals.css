@@ -8,6 +8,8 @@
   --grid-color: rgba(89, 43, 226, 0.05);
   --primary: #592be2;
   --primary-light: rgba(89, 43, 226, 0.1);
+  --dark-bg: #0a1929;    /* Dark navy blue */
+  --dark-sidebar: #0f2942; /* Lighter navy blue */
 }
 
 .dark {
@@ -22,7 +24,7 @@
 }
 
 .content-tile {
-  @apply bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-200 ease-out;
+  @apply bg-white dark:bg-gray-800/80 rounded-lg border border-gray-100 dark:border-gray-700/50 shadow-sm transition-all duration-200 ease-out;
   transform: translateY(0);
 }
 
@@ -43,4 +45,14 @@
   0% { opacity: 0.8; }
   50% { opacity: 1; }
   100% { opacity: 0.8; }
+}
+
+/* Update text colors for content titles */
+.content-tile h3 {
+  @apply text-gray-900 dark:text-white transition-colors duration-200;
+}
+
+/* Update description text colors */
+.content-tile p {
+  @apply text-gray-600 dark:text-gray-300 transition-colors duration-200;
 }

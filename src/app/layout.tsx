@@ -31,9 +31,9 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
-        <DarkModeToggle />
+      <body className="relative">
         {children}
+        <DarkModeToggle />
       </body>
     </html>
   )
