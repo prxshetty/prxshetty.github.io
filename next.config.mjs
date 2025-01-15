@@ -2,9 +2,16 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
+  output: 'export',
   assetPrefix: isProd ? '/prxshetty.github.io/' : '',
   basePath: isProd ? '/prxshetty.github.io' : '',
-  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  distDir: 'dist',
+  experimental: {
+    appDir: true
+  }
 };
 
 export default nextConfig;

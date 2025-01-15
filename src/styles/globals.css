@@ -8,8 +8,8 @@
   --grid-color: rgba(89, 43, 226, 0.05);
   --primary: #592be2;
   --primary-light: rgba(89, 43, 226, 0.1);
-  --dark-bg: #0a1929;    /* Dark navy blue */
-  --dark-sidebar: #0f2942; /* Lighter navy blue */
+  --dark-bg: #0a1929;    
+  --dark-sidebar: #0f2942; 
 }
 
 .dark {
@@ -47,24 +47,23 @@
   100% { opacity: 0.8; }
 }
 
-/* Update text colors for content titles */
 .content-tile h3 {
   @apply text-gray-900 dark:text-white transition-colors duration-200;
 }
 
-/* Update description text colors */
 .content-tile p {
   @apply text-gray-600 dark:text-gray-300 transition-colors duration-200;
 }
 
-/* Update the content-tile styles to include review section titles */
 .content-tile h3, 
 .reviews-section h3 {
   @apply text-gray-900 dark:text-white transition-colors duration-200;
 }
 
-/* Update tag text colors for better visibility in dark mode */
-.content-tile .bg-[#592be2]/10,
-span[class*="bg-[#592be2]/"] {
+.content-tile .bg-primary-light {
   @apply dark:text-white/90 dark:bg-[#592be2]/30;
+}
+
+.badge-primary {
+  @apply bg-[#592be2]/10 dark:text-white/90 dark:bg-[#592be2]/30;
 }

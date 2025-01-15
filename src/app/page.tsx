@@ -161,6 +161,16 @@ const blogs = [
 ];
 const courses = [
   {
+    title: "LLMs as Operating Systems: Agent Memory",
+    platform: "DeepLearning.AI",
+    instructor: "Letta",
+    dateCompleted: "Jan 2025",
+    description: "Build systems with MemGPT agents that can autonomously manage their memory.",
+    image: "/images/courses/letta.png",
+    link: "https://learn.deeplearning.ai/accomplishments/77059cac-a3c4-4a57-b637-b0512374407f",
+    skills: ["Agents", "LLMOps", "Prompt Engineering", "RAG"]
+  },
+  {
     title: "How Diffusion Models Work",
     platform: "DeepLearning.AI",
     instructor: "Sharon Zhou",
@@ -300,8 +310,6 @@ const reviews = [
   }
 ];
 
-
-
 export default function Home() {
   const [projectIndex, setProjectIndex] = useState(0);
   const [blogIndex, setBlogIndex] = useState(0);
@@ -387,25 +395,25 @@ export default function Home() {
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={['fab', 'twitter']} className="text-xl" />
+                <FontAwesomeIcon icon={faTwitter} className="text-xl" />
               </a>
               <a href="https://www.kaggle.com/prxshetty" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={['fab', 'kaggle']} className="text-xl" />
+                <FontAwesomeIcon icon={faKaggle} className="text-xl" />
               </a>
               <a href="https://linkedin.com/in/prxshetty" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={['fab', 'linkedin']} className="text-xl" />
+                <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
               </a>
               <a href="https://github.com/prxshetty" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] dark:hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={['fab', 'github']} className="text-xl" />
+                <FontAwesomeIcon icon={faGithub} className="text-xl" />
               </a>
               <a href="mailto:prxshetty@gmail.com" 
                  className="text-gray-700 dark:text-gray-200 hover:text-[#592be2] border border-gray-700 dark:border-gray-200 px-3 py-1 rounded-full text-sm transition-colors duration-300 hover:border-[#592be2] dark:hover:border-[#592be2]">
@@ -742,7 +750,7 @@ export default function Home() {
                               className="rounded-full mr-4"
                             />
                             <div>
-                              <h3 className="font-medium text-lg">{review.name}</h3>
+                              <h3 className="font-medium text-lg dark:text-white">{review.name}</h3>
                               <p className="text-sm text-gray-600 dark:text-gray-400">{review.role}</p>
                             </div>
                           </div>
