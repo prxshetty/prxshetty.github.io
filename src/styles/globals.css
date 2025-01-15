@@ -8,12 +8,6 @@
   --grid-color: rgba(89, 43, 226, 0.05);
   --primary: #592be2;
   --primary-light: rgba(89, 43, 226, 0.1);
-  --dark-bg: #0a1929;    
-  --dark-sidebar: #0f2942; 
-}
-
-.dark {
-  --grid-color: rgba(89, 43, 226, 0.1);
 }
 
 .bg-grid {
@@ -24,12 +18,12 @@
 }
 
 .content-tile {
-  @apply bg-white dark:bg-gray-800/80 rounded-lg border border-gray-100 dark:border-gray-700/50 shadow-sm transition-all duration-200 ease-out;
+  @apply bg-white rounded-lg border border-gray-100 shadow-sm transition-all duration-200 ease-out;
   transform: translateY(0);
 }
 
 .content-tile:hover {
-  @apply border-[#592be2]/20 dark:border-[#592be2]/40 shadow-lg;
+  @apply border-[#592be2]/20 shadow-lg;
   transform: translateY(-4px);
 }
 
@@ -38,7 +32,7 @@
 }
 
 .section-title {
-  @apply text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2;
+  @apply text-xl font-light text-gray-600 mb-6 border-b border-[#592be2]/10 pb-2;
 }
 
 @keyframes grid-fade {
@@ -48,22 +42,15 @@
 }
 
 .content-tile h3 {
-  @apply text-gray-900 dark:text-white transition-colors duration-200;
+  @apply text-gray-900 transition-colors duration-200;
 }
 
 .content-tile p {
-  @apply text-gray-600 dark:text-gray-300 transition-colors duration-200;
+  @apply text-gray-600 transition-colors duration-200;
 }
 
 .content-tile h3, 
 .reviews-section h3 {
-  @apply text-gray-900 dark:text-white transition-colors duration-200;
+  @apply text-gray-900 transition-colors duration-200;
 }
 
-.content-tile .bg-primary-light {
-  @apply dark:text-white/90 dark:bg-[#592be2]/30;
-}
-
-.badge-primary {
-  @apply bg-[#592be2]/10 dark:text-white/90 dark:bg-[#592be2]/30;
-}

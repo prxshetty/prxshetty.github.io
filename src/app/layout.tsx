@@ -1,18 +1,18 @@
 import '@/styles/globals.css';
 import Script from 'next/script';
 import { Metadata } from 'next';
-import DarkModeToggle from '@/components/DarkModeToggle';
 
 export const metadata: Metadata = {
   title: "Pranam's Portfolio",
 }
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="light">
+    <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,9 +31,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="relative">
+      <body>
         {children}
-        <DarkModeToggle />
       </body>
     </html>
   )
