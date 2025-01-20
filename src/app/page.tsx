@@ -370,11 +370,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 bg-grid">
+    <div className="min-h-screen bg-white bg-grid">
       <div className="h-1 bg-[#592be2] w-full"></div>
       
       <div className="flex relative">
-        <aside className="w-1/4 bg-gray-100/95 dark:bg-gray-800/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
+        <aside className="w-1/4 bg-gray-100/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
           <div className="sticky top-8">
             <div className="w-32 h-32 mb-3 overflow-hidden rounded-full">
               <Image
@@ -385,9 +385,9 @@ export default function Home() {
                 className="object-cover w-full h-full"
               />
             </div>
-            <h1 className="text-2xl font-semibold mb-1 text-gray-900 dark:text-white">Pranam Prakash Shetty</h1>
-            <p className="text-md text-gray-700 dark:text-gray-300 mb-1">Student at RIT</p>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+            <h1 className="text-2xl font-semibold mb-1">Pranam Prakash Shetty</h1>
+            <p className="text-md text-gray-700 mb-1">Student at RIT</p>
+            <p className="text-gray-600 mb-4 text-sm">
               <i className="fas fa-map-marker-alt mr-1"></i>Rochester, NY
             </p>
             <div className="flex space-x-3 mb-3 items-center">
@@ -448,13 +448,11 @@ export default function Home() {
           </div>
         </aside>
 
-        <main className="w-3/4 pl-8 pr-8 bg-white/95 dark:bg-gray-900/95 overflow-hidden backdrop-blur-sm">
+        <main className="w-3/4 pl-8 pr-8 bg-white/95 overflow-hidden backdrop-blur-sm">
           <div className="rounded-lg p-6">
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2`}>
-                  Projects
-                </h2>
+                <h2 className={`${robotoMono.className} section-title`}>Projects</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevProjects} 
@@ -487,22 +485,23 @@ export default function Home() {
                         placeholder="blur"
                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
                       />
-                      <div className="p-6 dark:bg-gray-800">
-                        <p className="text-[#592be2] dark:text-[#8b6cf5] text-sm font-semibold mb-1">{project.subtitle}</p>
-                        <h3 className="font-medium text-lg mb-2 text-gray-900 dark:text-white">{project.title}</h3>
+                      <div className="p-6">
+                        <p className="text-[#592be2] text-sm font-semibold mb-1">{project.subtitle}</p>
+                        <h3 className="font-medium text-lg mb-2">{project.title}</h3>
                         <div className="flex flex-wrap gap-2 mb-3">
                           {project.technologies.map((tech, techIndex) => (
-                            <span key={techIndex} 
-                                  className="bg-[#592be2]/10 dark:bg-[#592be2]/20 text-[#592be2] dark:text-[#8b6cf5] px-2 py-1 rounded-full text-xs font-normal">
+                            <span key={techIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
                               {tech}
                             </span>
                           ))}
                         </div>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{project.description}</p>
-                        <a href={project.link} 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           className="text-[#592be2] dark:text-[#8b6cf5] hover:text-[#4a24b8] dark:hover:text-[#9d82f7] inline-flex items-center text-sm font-medium">
+                        <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#592be2] hover:text-[#4a24b8] inline-flex items-center text-sm font-medium"
+                        >
                           View Project <span className="ml-1">→</span>
                         </a>
                       </div>
@@ -514,9 +513,7 @@ export default function Home() {
 
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2`}>
-                  Blog Posts
-                </h2>
+                <h2 className={`${robotoMono.className} section-title`}>Blog Posts</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevBlogs} 
@@ -570,9 +567,7 @@ export default function Home() {
 
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2`}>
-                  Courses
-                </h2>
+                <h2 className={`${robotoMono.className} section-title`}>Courses</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevCourses} 
@@ -637,9 +632,7 @@ export default function Home() {
 
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2`}>
-                  Academic Journey
-                </h2>
+                <h2 className={`${robotoMono.className} section-title`}>Academic Journey</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevAcademic} 
@@ -674,9 +667,7 @@ export default function Home() {
 
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2`}>
-                  Experience
-                </h2>
+                <h2 className={`${robotoMono.className} section-title`}>Experience</h2>
                 <div className="flex space-x-2">
                   <button 
                     onClick={prevExperience} 
@@ -717,9 +708,7 @@ export default function Home() {
 
             <section className="mb-10">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2`}>
-                  What People Say
-                </h2>
+                <h2 className={`${robotoMono.className} section-title`}>What People Say</h2>
                 <div className="flex items-center space-x-2">
                   <i 
                     className="fas fa-info-circle text-[#592be2] cursor-pointer" 
