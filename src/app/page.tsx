@@ -317,6 +317,23 @@ export default function Home() {
   const [academicIndex, setAcademicIndex] = useState(0);
   const [experienceIndex, setExperienceIndex] = useState(0);
   const [courseIndex, setCourseIndex] = useState(0);
+  const [isLargeScreen, setIsLargeScreen] = useState(true);
+
+  useEffect(() => {
+    // Handle window resize
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -373,10 +390,10 @@ export default function Home() {
     <div className="min-h-screen bg-white bg-grid">
       <div className="h-1 bg-[#592be2] w-full"></div>
       
-      <div className="flex relative">
-        <aside className="w-1/4 bg-gray-100/95 pl-8 pr-4 z-10 relative backdrop-blur-sm">
-          <div className="sticky top-8">
-            <div className="w-32 h-32 mb-3 overflow-hidden rounded-full">
+      <div className="flex flex-col lg:flex-row relative">
+        <aside className="w-full lg:w-1/4 bg-gray-100/95 p-4 lg:pl-8 lg:pr-4 z-10 relative backdrop-blur-sm">
+          <div className="lg:sticky lg:top-8">
+            <div className="w-24 h-24 lg:w-32 lg:h-32 mb-3 overflow-hidden rounded-full mx-auto lg:mx-0">
               <Image
                 src="/images/profile.jpg"
                 alt="Pranam Prakash Shetty"
@@ -385,12 +402,14 @@ export default function Home() {
                 className="object-cover w-full h-full"
               />
             </div>
-            <h1 className="text-2xl font-semibold mb-1">Pranam Prakash Shetty</h1>
-            <p className="text-md text-gray-700 mb-1">Student at RIT</p>
-            <p className="text-gray-600 mb-4 text-sm">
-              <i className="fas fa-map-marker-alt mr-1"></i>Rochester, NY
-            </p>
-            <div className="flex space-x-3 mb-3 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-xl lg:text-2xl font-semibold mb-1">Pranam Prakash Shetty</h1>
+              <p className="text-md text-gray-700 mb-1">Student at RIT</p>
+              <p className="text-gray-600 mb-4 text-sm">
+                <i className="fas fa-map-marker-alt mr-1"></i>Rochester, NY
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-start space-x-3 mb-3 items-center">
               <a href="https://twitter.com/prxshetty" 
                  target="_blank" 
                  rel="noopener noreferrer" 
@@ -420,36 +439,30 @@ export default function Home() {
                 Email me
               </a>
             </div>
-            <div className="mb-6">
-              <a 
-                href="/docs/PranamShettyF_Resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-[#592be2] hover:text-[#4a24b8] font-semibold text-sm inline-flex items-center"
-              >
-                <i className="far fa-file-alt mr-2"></i> Resume
-              </a>
+            <div className="text-center lg:text-left">
+              <h3 className="font-semibold mb-2">About</h3>
+              <p className="text-sm text-gray-600 mb-6">
+                I'm a Data science graduate at RIT. I love neural architectures. 
+                When I'm not coding, you'll find me enjoying coffee and chess.
+                Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
+              </p>
             </div>
-            <h3 className="font-semibold mb-2">About</h3>
-            <p className="text-sm text-gray-600 mb-6">
-              I'm a Data science graduate at RIT. I love neural architectures. 
-              When I'm not coding, you'll find me enjoying coffee and chess.
-              Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
-            </p>
-            <h3 className="font-semibold mb-2">Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Python", "SQL", "Deep Learning", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn", "Data Visualization", "Git", "NLP", "Computer Vision", "GANs", "LLMs", "BERT", "GPT", "Transformers", "Hugging Face", "Reinforcement Learning"].map((skill) => (
-                <span key={skill} 
-                      className="bg-[#592be2]/10 text-[#592be2] px-3 py-1 rounded-full text-xs font-normal">
-                  {skill}
-                </span>
-              ))}
+            <div>
+              <h3 className="font-semibold mb-2 text-center lg:text-left">Skills</h3>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                {["Python", "SQL", "Deep Learning", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn", "Data Visualization", "Git", "NLP", "Computer Vision", "GANs", "LLMs", "BERT", "GPT", "Transformers", "Hugging Face", "Reinforcement Learning"].map((skill) => (
+                  <span key={skill} 
+                        className="bg-[#592be2]/10 text-[#592be2] px-3 py-1 rounded-full text-xs font-normal">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </aside>
 
-        <main className="w-3/4 pl-8 pr-8 bg-white/95 overflow-hidden backdrop-blur-sm">
-          <div className="rounded-lg p-6">
+        <main className="w-full lg:w-3/4 p-4 lg:pl-8 lg:pr-8 bg-white/95 overflow-hidden backdrop-blur-sm">
+          <div className="rounded-lg p-2 lg:p-6">
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Projects</h2>
@@ -470,9 +483,10 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${projectIndex * 33.33}%)` }}>
+              <div className="section-container flex flex-col lg:flex-row transition-all duration-300 ease-in-out" 
+                   style={{ transform: `translateX(-${projectIndex * (isLargeScreen ? 33.33 : 100)}%)` }}>
                 {projects.map((project, index) => (
-                  <div key={index} className="w-1/3 flex-shrink-0 px-3">
+                  <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2 lg:px-3 mb-4 lg:mb-0">
                     <div className="content-tile h-full">
                       <Image
                         src={project.image}

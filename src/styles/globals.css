@@ -10,6 +10,17 @@
   --primary-light: rgba(89, 43, 226, 0.1);
 }
 
+/* Mobile-first styles */
+@layer base {
+  html {
+    @apply bg-white text-gray-900;
+  }
+  
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
 .bg-grid {
   background-size: var(--grid-size) var(--grid-size);
   background-image:
@@ -27,26 +38,50 @@
   transform: translateY(-4px);
 }
 
-.section-container:hover .content-tile:not(:hover) {
-  @apply opacity-50 blur-[0.5px];
+/* Adjust hover effects for touch devices */
+@media (hover: hover) {
+  .section-container:hover .content-tile:not(:hover) {
+    @apply opacity-50 blur-[0.5px];
+  }
 }
 
 .section-title {
-  @apply text-xl font-light text-gray-600 mb-6 border-b border-[#592be2]/10 pb-2;
+  @apply text-lg lg:text-xl font-light text-gray-600 mb-4 lg:mb-6 border-b border-[#592be2]/10 pb-2;
+}
+
+/* Responsive text adjustments */
+.content-tile h3 {
+  @apply text-base lg:text-lg font-medium text-gray-900 transition-colors duration-200;
+}
+
+.content-tile p {
+  @apply text-sm text-gray-600 transition-colors duration-200;
+}
+
+/* Navigation buttons */
+.nav-button {
+  @apply text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300;
+}
+
+/* Mobile navigation */
+@media (max-width: 1023px) {
+  .section-container {
+    @apply flex-col;
+  }
+  
+  .content-tile {
+    @apply mb-4;
+  }
+  
+  .nav-buttons {
+    @apply sticky top-0 z-20 bg-white/90 backdrop-blur-sm py-2;
+  }
 }
 
 @keyframes grid-fade {
   0% { opacity: 0.8; }
   50% { opacity: 1; }
   100% { opacity: 0.8; }
-}
-
-.content-tile h3 {
-  @apply text-gray-900 transition-colors duration-200;
-}
-
-.content-tile p {
-  @apply text-gray-600 transition-colors duration-200;
 }
 
 .content-tile h3, 

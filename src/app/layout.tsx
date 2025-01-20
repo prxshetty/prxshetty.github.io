@@ -30,6 +30,7 @@ export default function RootLayout({
             gtag('config', 'G-45MEB3F176');
           `}
         </Script>
+        <script id="chatbotkit-widget" src="https://static.chatbotkit.com/integrations/widget/v2.js" data-widget="cm659kggg0dl27wcbk4io72ah"></script>
       </head>
       <body>
         {children}
