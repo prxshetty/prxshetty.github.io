@@ -10,6 +10,25 @@
   --primary-light: rgba(89, 43, 226, 0.1);
 }
 
+@layer base {
+  html {
+    @apply bg-white text-gray-900;
+  }
+  
+  .dark {
+    --grid-color: rgba(89, 43, 226, 0.1);
+    color-scheme: dark;
+  }
+
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  .dark main {
+    @apply bg-gray-900;
+  }
+}
+
 .bg-grid {
   background-size: var(--grid-size) var(--grid-size);
   background-image:
@@ -18,12 +37,12 @@
 }
 
 .content-tile {
-  @apply bg-white rounded-lg border border-gray-100 shadow-sm transition-all duration-200 ease-out;
+  @apply bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700/50 shadow-sm transition-all duration-200 ease-out;
   transform: translateY(0);
 }
 
 .content-tile:hover {
-  @apply border-[#592be2]/20 shadow-lg;
+  @apply border-[#592be2]/20 dark:border-[#592be2]/40 shadow-lg;
   transform: translateY(-4px);
 }
 
@@ -32,7 +51,7 @@
 }
 
 .section-title {
-  @apply text-xl font-light text-gray-600 mb-6 border-b border-[#592be2]/10 pb-2;
+  @apply text-xl font-light text-gray-600 dark:text-gray-300 mb-6 border-b border-[#592be2]/10 pb-2;
 }
 
 @keyframes grid-fade {
@@ -42,15 +61,15 @@
 }
 
 .content-tile h3 {
-  @apply text-gray-900 transition-colors duration-200;
+  @apply text-gray-900 dark:text-white transition-colors duration-200;
 }
 
 .content-tile p {
-  @apply text-gray-600 transition-colors duration-200;
+  @apply text-gray-600 dark:text-gray-300 transition-colors duration-200;
 }
 
 .content-tile h3, 
 .reviews-section h3 {
-  @apply text-gray-900 transition-colors duration-200;
+  @apply text-gray-900 dark:text-white transition-colors duration-200;
 }
 
