@@ -434,6 +434,13 @@ export default function Home() {
                  className="text-gray-700 hover:text-[#592be2] transition-colors duration-200">
                 <FontAwesomeIcon icon={faGithub} className="text-xl" />
               </a>
+              <a href="/docs/Pranam_ResumeF.pdf"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-gray-700 hover:text-[#592be2] transition-colors duration-200"
+                 aria-label="View Resume">
+                <FontAwesomeIcon icon={faFileAlt} className="text-xl" />
+              </a>
               <a href="mailto:prxshetty@gmail.com" 
                  className="text-gray-700 border border-gray-700 px-3 py-1 rounded-full text-sm transition-colors duration-300 hover:border-[#592be2]">
                 Email me
