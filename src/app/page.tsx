@@ -7,9 +7,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faKaggle, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faChevronLeft, 
+  faChevronRight, 
+  faPlay, 
+  faPause, 
+  faStepForward, 
+  faStepBackward,
+  faBookOpen,
+  faBookmark
+} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faTwitter, faKaggle, faLinkedin, faGithub, faFileAlt, faChevronLeft, faChevronRight);
+library.add(
+  faTwitter, 
+  faKaggle, 
+  faLinkedin, 
+  faGithub, 
+  faFileAlt, 
+  faChevronLeft, 
+  faChevronRight, 
+  faPlay, 
+  faPause, 
+  faStepForward, 
+  faStepBackward,
+  faBookOpen,
+  faBookmark
+);
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
 
@@ -225,41 +248,41 @@ const courses = [
 const academics = [
   {
     degree: "Masters of Science, Data Science",
-    institution: "Rochester Institute of Technology, NY",
+    institution: "Rochester Institute of Technology",
     year: "2023 - 2025",
     gpa: "3.85 (SEM 4)",
     link: "https://www.rit.edu/",
-    comment: "After completing my Masters, I would have developed a strong foundation in data science principles, software engineering, database design, and advanced analytics."
+    comment: "After completing my Masters, I would have developed a strong foundation in Neural Networks, High Performance Computing(CUDA), data science principles, software engineering, database design, and advanced analytics."
   },
   {
     degree: "Post Graduation Diploma, Data Science",
-    institution: "Symbiosis Skills and Professional University, Pune",
+    institution: "Symbiosis Skills and Professional University",
     year: "2022 - 2023",
     gpa: "3.828",
     link: "https://sspu.ac.in/",
-    comment: "This Diploma/Associate degree specialized in statistical modeling, vector mathematics, AI Ethics and predictive analytics."
+    comment: "This Diploma/Associate degree specialized me in statistical modeling, vector mathematics, AI Ethics and predictive analytics."
   },
   {
     degree: "Bachelor of Science, Computer Science",
-    institution: "K K Wagh Computer Science College, Nashik",
+    institution: "K K Wagh Computer Science College",
     year: "2019 - 2022",
     gpa: "3.736",
     link: "https://kkwagh.edu.in/",
-    comment: "Built a strong foundation in programming and algorithms with my very first programming course in C++. Taught DSA, Probability Statistics, Java, Web Development, DBMS, Operating Systems, Computer Networks, Software Engineering, etc."
+    comment: "Built a strong foundation in programming and algorithms with my very first programming course in C++. Strengthened my skills in DSA, Probability Statistics, Java, Web Development, DBMS, Operating Systems, Computer Networks, Software Engineering, etc."
   },
   {
     degree: "Higher Secondary, STEM",
-    institution: "Matoshri College of Engineering & Research Centre, Nashik",
+    institution: "Matoshri College of Engineering & Research Centre",
     year: "2017 - 2019",
     link: "https://engg.matoshri.edu.in/",
-    comment: "Developed a passion for mathematics and physics."
+    comment: "Developed a passion for mathematics and coding here."
   },
   {
     degree: "High School, STEM",
-    institution: "Podar International School, Nashik",
+    institution: "Podar International School",
     year: "2007 - 2017",
     link: "https://www.podareducation.org/",
-    comment: "Cultivated curiosity and critical thinking skills."
+    comment: "Cultivated curiosity and critical thinking skills here."
   }
 ];
 
@@ -268,22 +291,22 @@ const experiences = [
     title: "ML Engineer Intern",
     company: "Marva.ai",
     duration: "June 2023 - Aug 2023",
-    description: "Pranam worked on financial stock prediction models, improving the accuracy of buy/sell signals using Ichimoku Cloud strategies and LSTM models. He applied NLP techniques with FinBERT for sentiment analysis, achieving a 15% increase in stock prediction accuracy. He also created real-time data visualizations using Plotly and Dash.",
+    description: "Developed financial stock prediction models by integrating advanced deep learning techniques, including transformer-based architectures like GPT and temporal fusion transformers (TFT). Enhanced buy/sell signal accuracy with hybrid Ichimoku Cloud strategies and refined LSTM models. Leveraged FinBERT and LLM-powered sentiment analysis, boosting stock prediction precision by 20%. Engineered real-time data, interactive data visualizations using Plotly, Dash, and Streamlit, optimizing insights for traders and analysts.",
     skills: ["LSTM", "FinBERT", "TensorFlow", "AWS Sagemaker", "Docker", "Jenkins", "JIRA"]
   },
   {
     title: "ML Research Intern",
     company: "Knowledge Solutions India",
     duration: "Sept 2021 - Nov 2021",
-    description: "He developed an ML pipeline for insurance claim cost prediction, using regression models like XGBoost and Random Forest. Pranam optimized data processing with PySpark, reducing the processing time by 40%, and created dashboards in PowerBI for model visualization.",
+    description: "Designed and deployed a scalable ML pipeline for insurance claim cost prediction, leveraging state-of-the-art ensemble models like XGBoost, LightGBM, and transformer-based regression. Optimized big data processing with PySpark and Dask, slashing computation time by 50%. Integrated AutoML for hyperparameter tuning, enhancing model performance. Developed dynamic, interactive dashboards using Power BI and Streamlit, enabling real-time insights for business decision-making.",
     skills: ["PySpark", "PowerBI", "XGBoost", "Random Forest", "SQL"]
   },
   {
     title: "Sales Intern",
     company: "Laugh Out Loud Ventures Pvt Ltd",
     duration: "Feb 2020 - March 2020",
-    description: "He led a sales team and shifted strategies to digital advertising during the pandemic, driving increased sales of educational courses through Google and Facebook Ads.",
-    skills: ["Google Analytics", "CRM software", "Google Ads", "Facebook Ads", "SEO tools", "Email software"]
+    description: "Led a sales team in transitioning to digital advertising during the pandemic, optimizing Google Ads and Facebook Ads strategies to drive higher conversions for educational courses. Utilized Google Analytics and CRM tools to refine targeting, improve campaign performance, and enhance customer engagement.",
+    skills: ["Google Analytics", "CRM software", "Google Ads", "Facebook Ads", "SEO tools", "Email software"],
   }
 ];
 const reviews = [
@@ -310,6 +333,27 @@ const reviews = [
   }
 ];
 
+const books = [
+  {
+    title: "Deep Learning with PyTorch",
+    author: "Eli Stevens",
+    image: "/images/books/pytorch.jpg",
+    link: "https://www.manning.com/books/deep-learning-with-pytorch"
+  },
+  {
+    title: "Hands-On Machine Learning",
+    author: "Aurélien Géron",
+    image: "/images/books/ml.jpg",
+    link: "https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/"
+  },
+  {
+    title: "Deep Learning for Coders",
+    author: "Jeremy Howard",
+    image: "/images/books/fastai.jpg",
+    link: "https://www.oreilly.com/library/view/deep-learning-for/9781492045519/"
+  }
+];
+
 export default function Home() {
   const [projectIndex, setProjectIndex] = useState(0);
   const [blogIndex, setBlogIndex] = useState(0);
@@ -318,6 +362,16 @@ export default function Home() {
   const [experienceIndex, setExperienceIndex] = useState(0);
   const [courseIndex, setCourseIndex] = useState(0);
   const [isLargeScreen, setIsLargeScreen] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [podcast, setPodcast] = useState({
+    title: "The TWIML AI Podcast",
+    episode: "#490: Foundation Models in the Enterprise",
+    progress: 28,
+    duration: 54,
+    image: "/images/podcasts/twiml.jpg",
+    link: "https://twimlai.com/podcast"
+  });
 
   useEffect(() => {
     // Handle window resize
@@ -338,10 +392,26 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setReviewOffset((prevOffset) => {
-        const newOffset = prevOffset + 0.025;
-        return newOffset >= reviews.length * 100 ? 0 : newOffset;
+        // When we reach the end of the first set of reviews
+        if (prevOffset >= 100) {
+          // Instantly jump back to start without animation
+          return 0;
+        }
+        return prevOffset + 0.025;
       });
     }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Simulated podcast update - replace with actual API call
+      setPodcast(prev => ({
+        ...prev,
+        progress: (prev.progress + 1) % prev.duration
+      }));
+    }, 12000); // Update every 12 hours: 43200000
 
     return () => clearInterval(interval);
   }, []);
@@ -386,84 +456,132 @@ export default function Home() {
     setCourseIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
+  const EducationImage = (education: string): string => {
+    switch(education) {
+      case 'Rochester Institute of Technology':
+        return 'rit.jpg';
+      case 'Symbiosis Skills and Professional University':
+        return 'SSPU.png';
+      case 'K K Wagh Computer Science College':
+        return 'kkw.jpeg';
+      case 'Matoshri College of Engineering & Research Centre':
+        return 'matoshree.jpg';
+      case 'Podar International School':
+        return 'podar.jpg';
+      default:
+        return '';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white bg-grid">
       <div className="h-1 bg-[#592be2] w-full"></div>
       
       <div className="flex flex-col lg:flex-row relative">
-        <aside className="w-full lg:w-1/4 bg-gray-100/95 p-4 lg:pl-8 lg:pr-4 z-10 relative backdrop-blur-sm">
-          <div className="lg:sticky lg:top-8">
-            <div className="w-24 h-24 lg:w-32 lg:h-32 mb-3 overflow-hidden rounded-full mx-auto lg:mx-0">
-              <Image
-                src="/images/profile.jpg"
-                alt="Pranam Prakash Shetty"
-                width={128}
-                height={128}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="text-center lg:text-left">
-              <h1 className="text-xl lg:text-2xl font-semibold mb-1">Pranam Prakash Shetty</h1>
-              <p className="text-md text-gray-700 mb-1">Student at RIT</p>
-              <p className="text-gray-600 mb-4 text-sm">
-                <i className="fas fa-map-marker-alt mr-1"></i>Rochester, NY
-              </p>
-            </div>
-            <div className="flex justify-center lg:justify-start space-x-3 mb-3 items-center">
-              <a href="https://twitter.com/prxshetty" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="text-gray-700 hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={faTwitter} className="text-xl" />
-              </a>
-              <a href="https://www.kaggle.com/prxshetty" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="text-gray-700 hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={faKaggle} className="text-xl" />
-              </a>
-              <a href="https://linkedin.com/in/prxshetty" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="text-gray-700 hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
-              </a>
-              <a href="https://github.com/prxshetty" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="text-gray-700 hover:text-[#592be2] transition-colors duration-200">
-                <FontAwesomeIcon icon={faGithub} className="text-xl" />
-              </a>
-              <a href="/docs/Pranam_ResumeF.pdf"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="text-gray-700 hover:text-[#592be2] transition-colors duration-200"
-                 aria-label="View Resume">
-                <FontAwesomeIcon icon={faFileAlt} className="text-xl" />
-              </a>
-              <a href="mailto:prxshetty@gmail.com" 
-                 className="text-gray-700 border border-gray-700 px-3 py-1 rounded-full text-sm transition-colors duration-300 hover:border-[#592be2]">
-                Email me
-              </a>
-            </div>
-            <div className="text-center lg:text-left">
-              <h3 className="font-semibold mb-2">About</h3>
-              <p className="text-sm text-gray-600 mb-6">
-                I'm a Data science graduate at RIT. I love neural architectures. 
-                When I'm not coding, you'll find me enjoying coffee and chess.
-                Whether you have a project in mind or just want to chat about the latest in tech, feel free to reach out.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2 text-center lg:text-left">Skills</h3>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-                {["Python", "SQL", "Deep Learning", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn", "Data Visualization", "Git", "NLP", "Computer Vision", "GANs", "LLMs", "BERT", "GPT", "Transformers", "Hugging Face", "Reinforcement Learning"].map((skill) => (
-                  <span key={skill} 
-                        className="bg-[#592be2]/10 text-[#592be2] px-3 py-1 rounded-full text-xs font-normal">
-                    {skill}
-                  </span>
-                ))}
+        <aside className="w-full lg:w-1/4 bg-gradient-to-b from-[#592be2]/5 to-white/50 p-6 lg:pl-8 lg:pr-6 z-10 relative border-r border-[#592be2]/10">
+          <div className="lg:sticky lg:top-8 space-y-6">
+            {/* Profile Card */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#592be2]/20 to-[#4a24b8]/10 rounded-2xl blur opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+              <div className="relative text-center bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-[0_8px_32px_rgba(89,43,226,0.1)]">
+                <div className="w-28 h-28 mb-4 overflow-hidden rounded-full mx-auto border-4 border-[#592be2]/20 transform transition duration-500 hover:scale-105">
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Pranam Prakash Shetty"
+                    width={112}
+                    height={112}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#592be2] to-[#4a24b8] bg-clip-text text-transparent mb-1">Pranam Shetty</h1>
+                <p className="text-sm text-[#592be2] font-mono mb-4">AI/ML Engineer & Researcher</p>
+                
+                {/* Social Links */}
+                <div className="flex justify-center space-x-3">
+                  {[
+                    {icon: faLinkedin, link: 'https://linkedin.com/in/prxshetty'},
+                    {icon: faGithub, link: 'https://github.com/prxshetty'},
+                    {icon: faTwitter, link: 'https://twitter.com/prxshetty'},
+                    {icon: faFileAlt, link: '/docs/Pranam_ResumeF.pdf'}
+                  ].map((item, index) => (
+                    <a 
+                      key={index}
+                      href={item.link}
+                      target="_blank"
+                      className="social-icon transform transition-all duration-300 hover:-translate-y-1"
+                      download={item.icon === faFileAlt}
+                    >
+                      <FontAwesomeIcon icon={item.icon} />
+                    </a>
+                  ))}
+                </div>
               </div>
+            </div>
+
+            {/* Combined About Me & Skills Card */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#592be2]/20 to-[#4a24b8]/10 rounded-2xl blur opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-[0_8px_32px_rgba(89,43,226,0.1)]">
+                <h2 className="text-lg font-semibold bg-gradient-to-r from-[#592be2] to-[#4a24b8] bg-clip-text text-transparent mb-3">About Me</h2>
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600">
+                    Currently focused on Agentic Frameworks, computer use and building LLM based applications while studying for my Masters in Data Science RIT.
+                    Avid Reader. Technical Blogger. Insane about AI.
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      // Agentic Frameworks
+                      "CrewAI", "LangGraph", "AutoGen", "Letta",
+                      // Core ML/AI
+                      "PyTorch", "TensorFlow", "LLMs", 
+                      // Infrastructure
+                      "CUDA", "Docker", "AWS", "MLOps",
+                      // Frameworks & Tools
+                      "HuggingFace", "LangChain",
+                      // Domains
+                      "Computer Vision", "NLP"
+                    ].map((skill) => (
+                      <span 
+                        key={skill} 
+                        className="bg-[#592be2]/10 text-[#592be2] px-3 py-1 rounded-full text-xs font-medium hover:bg-[#592be2]/20 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div className="flex justify-between items-center gap-4">
+              <a 
+                href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=E5845422D7DE89C09337652BAF48826F0C6C9CB6FAA7B0FE9F8B1AF447FACAB9" 
+                target="_blank"
+                className="cert-badge-link w-1/2"
+              >
+                <Image 
+                  src="/images/certs/ocvector.png" 
+                  alt="Oracle Vector Database" 
+                  width={200} 
+                  height={200} 
+                  className="w-full transition-all"
+                />
+              </a>
+              <a 
+                href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=5C2C44615B73F678DF85E44418348C3535ABCE032C9F7E82F196472434C80BCB" 
+                target="_blank"
+                className="cert-badge-link w-1/2"
+              >
+                <Image 
+                  src="/images/certs/ocgenai.png" 
+                  alt="Oracle Gen AI Professional" 
+                  width={200} 
+                  height={200} 
+                  className="w-full transition-all"
+                />
+              </a>
             </div>
           </div>
         </aside>
@@ -653,8 +771,8 @@ export default function Home() {
 
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
-                <h2 className={`${robotoMono.className} section-title`}>Academic Journey</h2>
-                <div className="flex space-x-2">
+                <h2 className={`${robotoMono.className} section-title`}>Academic Background</h2>
+                <div className={`flex space-x-2 ${academics.length <= 3 ? 'hidden' : ''}`}>
                   <button 
                     onClick={prevAcademic} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${academicIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
@@ -671,15 +789,40 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${academicIndex * 100}%)` }}>
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${academicIndex * 33.33}%)` }}>
                 {academics.map((academic, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="content-tile p-6">
-                      <p className="text-gray-600 text-sm mb-2">{academic.year}</p>
-                      <h3 className="font-medium text-lg text-black">{academic.degree}</h3>
-                      <p className="text-gray-700">{academic.institution}</p>
-                      {academic.gpa && <p className="text-gray-600 text-sm">GPA: {academic.gpa}</p>}
-                      <p className="text-gray-600 text-sm mt-2 italic">{academic.comment}</p>
+                  <div key={index} className="w-1/3 flex-shrink-0 px-3">
+                    <div className="content-tile h-full">
+                      <Image
+                        src={`/images/academics/${EducationImage(academic.institution.split(',')[0])}`}
+                        alt={academic.institution}
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                        loading={index < 3 ? "eager" : "lazy"}
+                        quality={75}
+                      />
+                      <div className="p-4 flex-grow flex flex-col">
+                        <div className="flex-grow">
+                          <h3 className="font-medium text-lg mb-2">{academic.institution}</h3>
+                          <div className="flex flex-col mb-2">
+                            <p className="text-[#592be2] text-sm font-semibold">{academic.degree}</p>
+                            <p className="text-gray-500 text-sm">{academic.year}</p>
+                          </div>
+                          {academic.gpa && <p className="text-gray-600 text-sm mb-2">GPA: {academic.gpa}</p>}
+                          <p className="text-gray-600 text-sm">{academic.comment}</p>
+                        </div>
+                        <div className="pt-4 mt-4 border-t border-gray-100">
+                          <a 
+                            href={academic.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-[#592be2] hover:text-[#4a24b8] inline-flex items-center text-sm font-medium"
+                          >
+                            View Institution <span className="ml-1">→</span>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -689,7 +832,7 @@ export default function Home() {
             <section className="mb-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-4">
                 <h2 className={`${robotoMono.className} section-title`}>Experience</h2>
-                <div className="flex space-x-2">
+                <div className={`flex space-x-2 ${experiences.length <= 3 ? 'hidden' : ''}`}>
                   <button 
                     onClick={prevExperience} 
                     className={`text-[#592be2] hover:text-[#4a24b8] transition-opacity duration-300 ${experienceIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
@@ -706,24 +849,59 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${experienceIndex * 100}%)` }}>
-                {experiences.map((experience, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="content-tile p-6">
-                      <p className="text-gray-600 text-sm mb-2">{experience.duration}</p>
-                      <h3 className="font-medium text-lg text-black">{experience.title}</h3>
-                      <p className="text-gray-700">{experience.company}</p>
-                      <p className="text-gray-600 mt-2 italic">{experience.description}</p>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {experience.skills.map((skill, skillIndex) => (
-                          <span key={skillIndex} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-normal">
-                            {skill}
-                          </span>
-                        ))}
+              <div className="section-container flex transition-all duration-300 ease-in-out" style={{ transform: `translateX(-${experienceIndex * 33.33}%)` }}>
+                {experiences.map((experience, index) => {
+                  const getCompanyImage = (company: string): string => {
+                    switch(company) {
+                      case 'Marva.ai':
+                        return 'marva.png';
+                      case 'Knowledge Solutions India':
+                        return 'ksi.png';
+                      case 'Laugh Out Loud Ventures Pvt Ltd':
+                        return 'lol.png';
+                      default:
+                        return '';
+                    }
+                  };
+
+                  return (
+                    <div key={index} className="w-1/3 flex-shrink-0 px-3">
+                      <div className="content-tile h-full">
+                        <div className="p-6 flex-grow flex flex-col">
+                          <div className="flex items-center mb-6">
+                            <Image
+                              src={`/images/company/${getCompanyImage(experience.company)}`}
+                              alt={experience.company}
+                              width={56}
+                              height={56}
+                              className="rounded-lg mr-4 object-contain bg-white p-1"
+                            />
+                            <div>
+                              <h3 className="font-medium text-lg mb-1">{experience.title}</h3>
+                              <p className="text-[#592be2] text-sm font-semibold">{experience.company}</p>
+                              <p className="text-gray-500 text-sm">{experience.duration}</p>
+                            </div>
+                          </div>
+                          <div className="text-gray-600 text-sm mb-4 flex-grow">
+                            {experience.description.split('. ').filter(point => point.trim()).map((point, i) => (
+                              <div key={i} className="flex items-start mb-3">
+                                <span className="text-[#592be2] mr-2 mt-1">•</span>
+                                <p>{point.trim()}{point.endsWith('.') ? '' : '.'}</p>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                            {experience.skills.map((skill, skillIndex) => (
+                              <span key={skillIndex} className="bg-[#592be2]/10 text-[#592be2] px-2 py-1 rounded-full text-xs font-normal">
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
 
@@ -789,3 +967,85 @@ export default function Home() {
     </div>
   );
 }
+
+const styles = `
+.sidebar-section-title {
+  @apply text-xs font-semibold text-[#592be2] uppercase tracking-wider mb-3;
+}
+
+.tech-pill {
+  @apply flex items-center px-3 py-1.5 bg-[#592be2]/5 text-gray-700 rounded-lg 
+         transition-colors hover:bg-[#592be2]/10;
+}
+
+.cert-badge-link {
+  @apply transition-all duration-300 hover:scale-105;
+}
+
+.cert-tooltip {
+  @apply absolute -bottom-8 left-1/2 transform -translate-x-1/2 
+         bg-gray-800 text-white text-xs py-1 px-2 rounded
+         opacity-0 group-hover:opacity-100 transition-opacity
+         whitespace-nowrap;
+}
+
+.social-icon {
+  @apply w-10 h-10 flex items-center justify-center 
+         bg-white rounded-xl text-[#592be2] 
+         shadow-sm hover:shadow-lg transition-all 
+         duration-300 hover:text-[#4a24b8];
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(80px) rotate(0deg) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: rotate(180deg) translateX(80px) rotate(-180deg) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) translateX(80px) rotate(-360deg) scale(1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.skill-orb {
+  @apply absolute w-16 h-16 flex items-center justify-center text-center 
+         text-sm font-medium text-[#592be2] bg-white/90 backdrop-blur-sm 
+         rounded-lg shadow-sm cursor-pointer transition-all duration-1000 
+         hover:!scale-150 hover:!shadow-xl hover:z-20;
+  transform-style: preserve-3d;
+  animation: orbit 20s linear infinite;
+}
+
+.skill-orb:nth-child(even) {
+  animation-duration: 25s;
+  animation-direction: reverse;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 0 0 rgba(89,43,226,0.2);
+  }
+  50% { 
+    transform: scale(1.1) rotate(180deg);
+    box-shadow: 0 0 0 20px rgba(89,43,226,0);
+  }
+}
+
+.galaxy-container {
+  perspective: 1000px;
+}
+`;
