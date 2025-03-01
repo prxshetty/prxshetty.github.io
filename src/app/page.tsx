@@ -38,6 +38,14 @@ const robotoMono = Roboto_Mono({ subsets: ['latin'], weight: ['300'] });
 
 const projects = [
   {
+    title: "Lumi",
+    subtitle: "Agentic Framework",
+    description: "Built in 24 hours at BrickHack 11, Lumi is a real-time voice assistant with 10 custom tools such as script execution, web searches, AI image generation, and more—all controllable by voice with interruption capabilities.",
+    image: "/images/projects/lumi.png",
+    link: "https://github.com/ka8540/Brick-Hack11/",
+    technologies: ["Python", "Chainlit", "Speechmatics Flow", "LangChain", "SQLite", "Grok API", "AlphaVantage API", "DALL-E"]
+  },
+  {
     title: "JobTrail",
     subtitle: "Web Development",
     description: "Job Trail is a Chrome extension that automatically categorizes Gmail emails related to job applications based on their content",
@@ -105,6 +113,18 @@ const projects = [
 
 const blogs = [
   {
+    title: "Scribe, the Most Advanced AI Transcription Model Yet",
+    description: "Scribe, ElevenLabs’ first Speech to Text model, is the world’s most accurate transcription model. ",
+    link: "https://medium.com/@prxshetty/scribe-the-most-advanced-ai-transcription-model-yet-d5cd7f96368d",
+    image: "/images/blogs/scribe.webp",
+    date: "March 1, 2025",
+  },{
+    title: "Grok 3: The AI That Could Challenge DeepSeek and OpenAI’s Best",
+    description: "On X ( formerly Twitter ) Elon Musk along with the team showcased state-of-the-art reasoning, excelling in complex problem...",
+    link: "https://medium.com/@prxshetty/grok-3-the-ai-that-could-challenge-deepseek-and-openais-best-e20b3f8ad5e2",
+    image: "/images/blogs/grok3.webp",
+    date: "Feb 18, 2025",
+  },{
     title: "Want to Master Open-Source LLMs in 2025? Start with DeepSeek V3",
     description: "Meet DeepSeek V3 — the AI powerhouse that's turning heads in Silicon Valley with its jaw-dropping 671B parameters (but here's the twist…",
     link: "https://medium.com/@prxshetty/want-to-master-open-source-llms-in-2025-start-with-deepseek-v3-f485d45a6387",
